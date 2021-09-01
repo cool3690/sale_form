@@ -1,0 +1,73 @@
+body {
+			 
+   
+    text-align: justify;
+    text-justify: inter-word;
+    background: rgba(172, 240, 203, 0.2);
+}
+ 
+.form-group{
+    background: rgb(172,240,203);
+    background: linear-gradient(90deg, rgba(172,240,203,0) 15%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 85%, rgba(0,228,146,0.1) 85%, rgba(172,240,203,0) 87%);
+} 
+.form-control{
+    border-color:#00E492;
+    border-width:1px;
+}
+.form-control:focus {
+
+    border:1px solid #00E492;
+    box-shadow: 0 0 3px #00E492;
+}
+.btn{
+    background-color: #fff; 
+    color:black;
+    margin-bottom:20px;
+    border-color:#00E492;
+}
+.btn:hover{
+    background-color: #00E492; 
+    color:black;
+    margin-bottom:20px;
+    border-color:#00E492;
+}
+.btn_choice{
+    background-color: Transparent; 
+    border:none;
+    outline: none;
+}
+.btn_choice:active {
+    border-style: outset;
+}
+th{
+    line-height:30px;
+    width:100px; 
+    color: white;
+}
+.find{
+    border-radius: 50px;
+}
+td{
+    background-color:#fff;
+}
+tr{
+     
+    border-radius: 30px;
+}
+        
+thead th:first-child {
+border-radius: 10px 0 0 100px;
+}
+thead th:last-child {
+border-radius: 0 100px 100px 0;
+}
+
+/* remove border from first tbody row... */
+.table > tbody > tr:first-child > td,
+.table > tbody > tr:first-child > th {
+border-top: none;
+}
+.table-bordered{
+    border: 0px;
+     
+}

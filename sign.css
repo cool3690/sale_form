@@ -1,0 +1,98 @@
+ 
+#displaysign{
+    position: relative;
+    top: 300px;
+    width: 120px;
+    height: 40px;
+}
+@media (min-width: 0px) and (max-width: 409px) {
+    .signform {
+        //font-family: 微軟雅黑;
+        position: fixed;
+        background-color: white;
+        top:20%;
+        // margin-left:2%;
+        width: 95vw;
+        height:250px;
+        border: double 2px transparent;
+        border-radius: 10px;
+        background-image: linear-gradient(white, white), 
+                        linear-gradient(white, white);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        text-align: center;
+        z-index: 999;
+        
+        
+    }
+    .boxbtn{
+        background-color:#fff; 
+		border-width:2px;
+        border-color:#00E492;
+        min-width:103px;
+        height:40px;
+        border-radius:5px;
+        font-size: 12pt;
+    }
+}
+@media (min-width: 410px) and (max-width: 1024px) {
+    .signform {
+        //font-family: 微軟雅黑;
+        position: fixed;
+        background-color: white;
+        top: 20%;
+        left:20%;
+        width: 435px;
+        height:250px;
+        border: double 2px transparent;
+        border-radius: 10px;
+        background-image: linear-gradient( white, white), 
+                        linear-gradient(white, white);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+            text-align: center;
+            z-index: 999;
+    }
+    .boxbtn{
+        background-color:#fff; 
+		border-width:2px;
+        border-color:#00E492;
+        min-width:153px;
+        height:40px;
+        border-radius:5px;
+        font-size: 14pt;
+    }
+ 
+}
+@media (min-width: 1025px) and (max-width: 4000px) {
+    .signform {
+        //font-family: 微軟雅黑;
+        position: fixed;
+        background-color: white;
+        top: 40%;
+        left: 38%;
+        width: 435px;
+        height:250px;
+        border: double 2px transparent;
+        border-radius: 10px;
+        background-image: linear-gradient(white, white), 
+                           linear-gradient(  white,white);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+            text-align: center;
+            z-index: 999;
+    } 
+    .boxbtn{
+        background-color:#fff; 
+		border-width:2px;
+        border-color:#00E492;
+        min-width:153px;
+        height:40px;
+       
+        border-radius:5px;
+        font-size: 14pt;
+    }
+ 
+    
+}
+  
