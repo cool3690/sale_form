@@ -1,44 +1,99 @@
-<html>
-<head>
-<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   	  
+  </head>
+   
+<script type="text/javascript">
+	 
+	function show_book_num(a)
+	{    
+		var result=document.getElementById('company').value;
+		 
+		  var words="";
+		if (window.XMLHttpRequest)
+			{// IE7+, Firefox, Chrome, Opera, Safari  
+				xmlhttp=new XMLHttpRequest();
+			}
+		 
+		xmlhttp.onreadystatechange=function()
+		{
+			if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{    words =xmlhttp.responseText.split("\n");
+				  
+				//document.getElementById('case-list').empty();
+				var datalist = document.getElementById('case-list');
+				 
+				//datalist.remove(0);
+				while (datalist.firstChild) {
+					datalist.removeChild(datalist.firstChild);
+				}
+				for(var i=0;i<words.length-1;i++)
+				 	{	 
+						 var option1 = document.createElement("option");
+						 option1.value = words[i];
+						 
+						 datalist.appendChild(option1);
+					 } 
+				 
+			}
+		} 
+		xmlhttp.open("GET","sql_company.php?q="+result,true);
+		xmlhttp.send();
+	}
+	 
+	</script>	
+	  
 </head>
+ 
+<body> 
+<div class="container">
+ 
+ 
 
-<body>
-<h2 align=center>動態下拉式選單：兩框連動（兩層樹狀選項）</h2>
-<hr>
+	<form  id="myform" name="myform" action="t.php" method="post" enctype="multipart/form-data">
+    
+   <div class="container" > 
+<div class="form-group row"   >	
+<?php 
+require 'db_login.php';	// where delivery='$date' and status in('N','RN')
+?>
+	 <!--line 1-->
+	 
+		 
+	 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2"  >
+		   <label>客戶：</label> 
+		   <input list="company-list" id="company" class="form-control" onchange="show_book_num(this.id)"> 
+		   <datalist  id="company-list"   >  
+		   
+    	   <?php
+					$sql_search2 = "select company from `customer`";
+						$result_n = mysqli_query($db, $sql_search2);
+						
+						while ($row = mysqli_fetch_array($result_n)) {
+				?>
+						<option value="<?=$row['company'];?>">
+				<?php
+						}
+				?>
+ 
+			</datalist>
 
-<script>
-department=new Array();
-department[0]=["張隆紋", "黃能富", "王炳豐", "張世杰", "張智星"];	// 資訊系
-department[1]=["黃瑞星", "黃仲陵", "呂忠津", "鄭博泰", "盧向成"];	// 電機系
-department[2]=["楊敬堂", "王培仁", "葉銘權", "宋鎮國"];			// 動機系
-department[3]=["王天戈", "開執中", "梁正宏"];				// 工科系
-
-function renew(index){
-	for(var i=0;i<department[index].length;i++)
-		document.myForm.member.options[i]=new Option(department[index][i], department[index][i]);	// 設定新選項
-	document.myForm.member.length=department[index].length;	// 刪除多餘的選項
-}
-</script>
-
-<form name="myForm">
-系別：
-<select  onChange="renew(this.selectedIndex);">
-	<option value="資訊系">資訊系
-	<option value="電機系">電機系
-	<option value="動機系">動機系
-	<option value="工科系">工科系
-</select>
-
-隊員：
-<select name="member"  >
-<option value="資訊系">資訊系
-	<option value="電機系">電機系
-	<option value="動機系">動機系
-	<option value="工科系">工科系
-</select>
-</form>
-
-<hr>
+	 </div>
+	 
+	  <!--line 3-->
+	  
+	 <div class="col-12 col-xs-12 col-sm-8 col-md-8 col-lg-8 mt-2 mb-2">
+	   <label>購買紀錄：</label>
+	 <input list="case-list" id="work_case" class="form-control"  > 
+		   <datalist  id="case-list"   >
+		    
+			</datalist>
+	   
+	 </div>
+  
+</form>  
+</div>
+ 
 </body>
 </html>

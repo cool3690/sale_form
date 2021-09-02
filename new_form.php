@@ -40,17 +40,65 @@
 				} );
   
  
-department=new Array();
-department[0]=["大於20", "大於50", "小於90", "20-90", "20-70","30-80","35-90","40-80","50-90","30-60","20-50"];	// 資訊系
-department[1]=["140", "175", "210", "245", "280", "315", "350", "420"];	// 電機系
-  
-function renew(index){
-	for(var i=0;i<department[index].length;i++)
-		document.myform.strength.options[i]=new Option(department[index][i], department[index][i]);	// 設定新選項
-	document.myform.strength.length=department[index].length;	// 刪除多餘的選項
-}
- 
-	 
+	department=new Array();
+	department[0]=["大於20", "大於50", "小於90", "20-90", "20-70","30-80","35-90","40-80","50-90","30-60","20-50"];	// 資訊系
+	department[1]=["140", "175", "210", "245", "280", "315", "350", "420"];	// 電機系
+	
+	function renew(index){
+		for(var i=0;i<department[index].length;i++)
+			document.myform.strength.options[i]=new Option(department[index][i], department[index][i]);	// 設定新選項
+		document.myform.strength.length=department[index].length;	// 刪除多餘的選項
+	}
+	
+	function show_case(a)
+	{    
+		var result=document.getElementById('company').value;
+		 
+		  var words="";
+		if (window.XMLHttpRequest)
+			{// IE7+, Firefox, Chrome, Opera, Safari  
+				xmlhttp=new XMLHttpRequest();
+			}
+		 
+		xmlhttp.onreadystatechange=function()
+		{
+			if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{    words =xmlhttp.responseText.split("\n");
+				var datalist = document.getElementById('case-list');
+				  
+				 while (datalist.firstChild) {
+					 datalist.removeChild(datalist.firstChild);
+				 }
+				 for(var i=0;i<words.length-1;i++)
+					  {	 
+						  var option1 = document.createElement("option");
+						  option1.value = words[i];
+						  
+						  datalist.appendChild(option1);
+					  } 
+			}
+		} 
+		xmlhttp.open("GET","sql_company.php?q="+result,true);
+		xmlhttp.send();
+	}
+	function show_book_num(a){
+		var company=document.getElementById('company').value;//work_case
+		var work_case=document.getElementById('work_case').value;
+		 
+		if (window.XMLHttpRequest)
+			{// IE7+, Firefox, Chrome, Opera, Safari  
+				xmlhttp=new XMLHttpRequest();
+			}
+			xmlhttp.onreadystatechange=function(){
+				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+					{  var words =xmlhttp.responseText;
+						 
+					 document.forms['myform']['book_num'].value=words;
+					}
+			}
+		xmlhttp.open("GET","sql_book_num.php?company="+company+"&work_case="+work_case,true);
+		xmlhttp.send();
+	} 
 	</script>	
 	<script src="lib/alertify.min.js"></script>
 	<script>
@@ -301,8 +349,8 @@ $result = mysqli_query($db,$sql);
 	 </div>	
 	 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2"  >
 		   <label>客戶：</label> 
-		   <input list="company" name="company" class="form-control"></label>
-		   <datalist  name="company" id="company">
+		   <input list="company-list" id="company" class="form-control" onchange="show_case(this.id)"> 
+		   <datalist  id="company-list"   >
     	   <?php
 					$sql_search2 = "select company from `customer`";
 						$result_n = mysqli_query($db, $sql_search2);
@@ -328,8 +376,12 @@ $result = mysqli_query($db,$sql);
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
 	 <div class="col-12 col-xs-12 col-sm-8 col-md-8 col-lg-8 mt-2 mb-2">
 	   <label>工程名稱：</label>
-	   
-	   <input type="text" class="form-control" name="work_case" id="work_case" value="">
+	   <input list="case-list" id="work_case" class="form-control" onchange="show_book_num(this.id)" > 
+		   <datalist  id="case-list"   >
+		    
+			</datalist>
+	 <!--  <input type="text" class="form-control" name="work_case" id="work_case" value="">-->
+	  
 	 </div>
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div>
