@@ -92,7 +92,7 @@
 				$daycount=7;
 			} 
 			//設定分頁------------------------------------------------------------------------------
-			$sql = "SELECT * FROM erp_form where status in('N','RN')and date between '$ndate' and '$ndate2'order by book_num ASC";
+			$sql = "SELECT * FROM erp_form where status in('N','RN')and date between '$ndate' and '$ndate2'order by  CONVERT(`company` using big5),book_num ASC";
 			$date=date('Y-m-d');
 		  
 			$result = mysqli_query($db, $sql);//.' LIMIT '.$stacle_page.', '.$per_num
