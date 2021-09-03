@@ -119,6 +119,7 @@ function renew(index){
                         $_SESSION['quantity']=$row["quantity"];
                         $_SESSION['work_case']=$row['work_case'];
                         $_SESSION['work_type']=$row["work_type"];
+                        $_SESSION['book_num']=$row["book_num"];
                         $_SESSION['code']=$row["code"];
                         $_SESSION['qc']=$row["qc"];
                         $_SESSION['qc_time']=$row["qc_time"];
@@ -137,7 +138,8 @@ function renew(index){
                     $type= $row["type"];
                     $quantity=$row["quantity"];
                     $work_case=$row['work_case'];
-                    $work_type=$row["work_type"];  
+                    $work_type=$row["work_type"]; 
+                    $book_num=$row["book_num"]; 
                     $code=$row["code"];
                     $qc=$row["qc"];
                     $qc_time=$row["qc_time"];
@@ -204,20 +206,8 @@ function renew(index){
                                    
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
                 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
-                       <!--line 2-->
-          <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
-	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
-             
-                       <div class="col-12 col-xs-12 col-sm-8 col-md-8 col-lg-8 mt-2 mb-2">
-                         <label>工地位置：</label>
-                         <input type="text" class="form-control" name="place" id="place" value="<?=$place;?>">
-                       </div>
-                                   
-	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
-                <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
-
-                        <!--line 2-->
-                        <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+                     <!--line 2-->
+                     <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
              
                        <div class="col-12 col-xs-12 col-sm-8 col-md-8 col-lg-8 mt-2 mb-2">
@@ -227,6 +217,22 @@ function renew(index){
                 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
                   <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
 	      
+                       <!--line 2-->
+          <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
+                        <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+                        <label>訂單單號：</label>
+                        <input type="text" class="form-control" name="book_num" id="book_num" value="<?=$book_num;?>">
+                        </div>
+	                   <div class="col-12 col-xs-12 col-sm-6 col-md-6 col-lg-6 mt-2 mb-2">
+                         <label>工地位置：</label>
+                         <input type="text" class="form-control" name="place" id="place" value="<?=$place;?>">
+                       </div>
+                                   
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
+                <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+
+                   
                        <!--line 3-->
                         <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
                         <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
@@ -460,6 +466,7 @@ function renew(index){
         $delivery_time2=$_POST['delivery_time2'];
         $sale=$_POST['sale'] ;
         $note=$_POST['note'] ;
+        $book_num=$_POST['book_num'];
         $name = $_SESSION['acc'];
         $company=str_replace("有限公司","",$company);
         $company=str_replace("股份有限公司","",$company);
@@ -474,8 +481,8 @@ function renew(index){
 	 
          $sql = "update `saleform` set status='R' where id='$cid ' ";
          mysqli_query($db, $sql);
-        $sqlRN="INSERT INTO `saleform`(`book_date`, `company`, `place`, `work_case`, `strength`, `type`, `quantity`, `work_type`, `code`, `qc`, `qc_time`, `qc_time2`, `user`, `tel`, `delivery`, `delivery_time`, `delivery_time2`, `sale`, `note`, `status`, `filled_in`) VALUES 
-        ('$book_date', '$company', '$place', '$work_case', '$strength', '$type', '$quantity', '$work_type', '$code','$qc','$qc_time','$qc_time2', '$user', '$tel', '$delivery', '$delivery_time', '$delivery_time2', '$sale', '$note','RN','$name')";
+        $sqlRN="INSERT INTO `saleform`(`book_date`,`book_num`,`company`, `place`, `work_case`, `strength`, `type`, `quantity`, `work_type`, `code`, `qc`, `qc_time`, `qc_time2`, `user`, `tel`, `delivery`, `delivery_time`, `delivery_time2`, `sale`, `note`, `status`, `filled_in`) VALUES 
+        ('$book_date','$book_num', '$company', '$place', '$work_case', '$strength', '$type', '$quantity', '$work_type', '$code','$qc','$qc_time','$qc_time2', '$user', '$tel', '$delivery', '$delivery_time', '$delivery_time2', '$sale', '$note','RN','$name')";
        mysqli_query($db, $sqlRN);
      
                       

@@ -182,8 +182,8 @@
 }
 .boxbtn{
 	border: 2px solid #00E492;
-box-sizing: border-box;
-border-radius: 5px;
+	box-sizing: border-box;
+	border-radius: 5px;
 }
 .boxbtn:hover{
 	background-color: #00E492; 
@@ -219,6 +219,7 @@ border-radius: 5px;
 		 $delivery_time2=$_POST['delivery_time2'];
 		  $type=$_POST['type'];
 		  $work_select="";//$_POST['work_select'];
+		  $book_num=$_POST['book_num'];
 		 $code="";
 		 $qc=$_POST['qc'];
 		 $qc_time="";//$_POST['qc_time'];
@@ -239,12 +240,12 @@ border-radius: 5px;
 		 $company=str_replace("企業行","",$company);
 		 //$sql = "INSERT INTO `saleform`(`book_date`, `company`, `place`, `work_select`, `work_case`, `strength`, `type`,`quantity`, `work_type`, `code`, `qc`, `qc_time`, `qc_time2`, `user`, `tel`, `delivery`, `delivery_time`, `delivery_time2`, `sale`, `note`, `status`, `filled_in`) VALUES 
 		 //('$book_date', '$company', '$place', '$work_select', '$work_case', '$strength', '$type', '$quantity', '$work_type', '$code','$qc','$qc_time','$qc_time2', '$user', '$tel', '$delivery', '$delivery_time', '$delivery_time2', '$sale', '$note','N','$name')";
-		 $sql = "INSERT INTO `saleform`(`book_date`, `company`, `place`, `work_case`, `strength`, `type`,`quantity`, `work_type`, `code`, `qc`, `qc_time`, `qc_time2`, `user`, `tel`, `delivery`, `delivery_time`, `delivery_time2`, `sale`, `note`, `status`, `filled_in`) VALUES 
-			('$book_date', '$company', '$place', '$work_case', '$strength', '$type', '$quantity', '$work_type', '$code','$qc','$qc_time','$qc_time2', '$user', '$tel', '$delivery', '$delivery_time', '$delivery_time2', '$sale', '$note','N','$name')";
+		 $sql = "INSERT INTO `saleform`(`book_date`, `book_num`,`company`, `place`, `work_case`, `strength`, `type`,`quantity`, `work_type`, `code`, `qc`, `qc_time`, `qc_time2`, `user`, `tel`, `delivery`, `delivery_time`, `delivery_time2`, `sale`, `note`, `status`, `filled_in`) VALUES 
+			('$book_date','$book_num', '$company', '$place', '$work_case', '$strength', '$type', '$quantity', '$work_type', '$code','$qc','$qc_time','$qc_time2', '$user', '$tel', '$delivery', '$delivery_time', '$delivery_time2', '$sale', '$note','N','$name')";
 			 
 		 if (mysqli_query($db, $sql)) {	
 		  
-		 	 // line_call("新增訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
+		 	//  line_call("新增訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
 	 /*
 		 echo '<div class="alert alert-info alert-dismissible">
 					 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -349,8 +350,8 @@ $result = mysqli_query($db,$sql);
 	 </div>	
 	 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2"  >
 		   <label>客戶：</label> 
-		   <input list="company-list" id="company" class="form-control" onchange="show_case(this.id)"> 
-		   <datalist  id="company-list"   >
+		   <input list="company-list" id="company"  name="company" class="form-control" onchange="show_case(this.id)"> 
+		   <datalist  id="company-list"  name="company" >
     	   <?php
 					$sql_search2 = "select company from `customer`";
 						$result_n = mysqli_query($db, $sql_search2);
@@ -376,8 +377,8 @@ $result = mysqli_query($db,$sql);
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
 	 <div class="col-12 col-xs-12 col-sm-8 col-md-8 col-lg-8 mt-2 mb-2">
 	   <label>工程名稱：</label>
-	   <input list="case-list" id="work_case" class="form-control" onchange="show_book_num(this.id)" > 
-		   <datalist  id="case-list"   >
+	   <input list="case-list" id="work_case" name="work_case"class="form-control" onchange="show_book_num(this.id)" > 
+		   <datalist  id="case-list"  name="work_case" >
 		    
 			</datalist>
 	 <!--  <input type="text" class="form-control" name="work_case" id="work_case" value="">-->
@@ -494,6 +495,7 @@ $result = mysqli_query($db,$sql);
 	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2" >
 		   <label>業務：</label> 
 		   <select class="form-control" name="sale" id="sale"  >
+			  
 				   <option value='王南欽'>王南欽</option>
 				 <option value='王振宇'>王振宇</option>
 				 <option value='林商發'>林商發</option>

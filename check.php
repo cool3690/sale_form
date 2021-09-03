@@ -176,7 +176,7 @@ jQuery(document).ready(function() {
 				    mysqli_query($db, $sql);
 				}
 				if (mysqli_query($db, $sql)) {
-					//  line_call("刪除訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
+					   //line_call("刪除訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
 	
 					?>	
 					 
@@ -302,7 +302,7 @@ jQuery(document).ready(function() {
 					<th class='text-center align-middle' style="border-radius:10% 0% 0% 0%; border: none !important;"> 訂貨時間<br>出貨時間<br>業務</th>
 					 
 					<th class='text-center align-middle' >客戶<br>工程名稱</th>
-					 <th class='text-center align-middle' >工地位置</th>
+					 <th class='text-center align-middle' >訂單單號<br>工地位置</th>
 					<th class='text-center align-middle' > 強度<br>數量<br>施工方式</th>
 					 
 					<th class='text-center align-middle' > 品管<br>品管時間</th>
@@ -338,7 +338,8 @@ jQuery(document).ready(function() {
 						0000000000</font>
 					</td>
 					<td class="text-center align-middle" style="line-height:30px;color:'. $color.';"> <br>
-					'.$row["place"].'  
+					'.$row["book_num"].'<br>'
+					 .$row["place"].'  
 					 
 					<br><font color="white" style="opacity: 0;">
 					00000000000</font>
