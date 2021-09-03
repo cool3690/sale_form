@@ -278,13 +278,7 @@ function renew(index){
                              <label>數量：</label> 
                              <input class="form-control" name="quantity" id="quantity" value="<?=$quantity;?>">            
                        </div>
-                       <!--
-                       <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
-			  <label>配比代號：</label> 
-			  <input class="form-control" name="code" id="code" value="<?=$code;?>" >
-                    
-                        </div>
-                  -->	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+                      <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
                   <label>施工方式：</label>
                         <select class="form-control" name="work_type" id="work_type"  >
                          <option value='<?=$work_type;?>'selected><?=$work_type;?></option>
@@ -354,17 +348,7 @@ function renew(index){
                                            
                                     </select>				  
                         </div>
-                        <!--
-                        <div class="col-12 col-xs-12 col-sm-3 col-md-3 col-lg-3 mt-2 mb-2">
-                                <label>品管時段:</label> 
-                                <select class="form-control" name="qc_time" id="qc_time"  >
-                                <option value='<?=$qc_time;?>'selected><?=$qc_time;?></option>
-                                            <option value='早上'>早上</option>
-                                          <option value='下午'>下午</option>
-                                     
-                                    </select>			  
-                        </div>
-                  -->
+                        
                         <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
                                 <label>品管時間:</label> 
                                 <input class="form-control" name="qc_time2" id="qc_time2" value="<?=$qc_time2;?>" >
@@ -383,33 +367,7 @@ function renew(index){
                      
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
                 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div>
-               
-                       <!--line 6
-                       <div class="col-12 col-xs-12 col-sm-2 "  > </div> 
-                           <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2">
-                             <label>聯絡人：</label> 
-                             <input class="form-control" name="user" id="user" value="<?=$user;?>" >
-                                   
-                       </div>	
-                       <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2" >
-                             <label>電話：</label> 
-                             <input class="form-control" name="tel" id="tel" value="<?=$tel;?>">            
-                       </div>
-                       <div class="col-12 col-xs-12 col-sm-2 "> </div>
-               -->
-                        <!--line 7
-                        <div class="col-12 col-xs-12 col-sm-2 "  > </div> 
-                           <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2">
-                             <label>出貨時間：</label> 
-                             <input class="form-control" name="delivery" id="delivery" value="<?=$delivery;?>" >
-                                   
-                       </div>	
-                       <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2" >
-                             <label>業務：</label> 
-                             <input class="form-control" name="sale" id="sale" value="<?=$sale;?>" >
-                                    
-                       </div>
-                       <div class="col-12 col-xs-12 col-sm-2 "> </div>-->
+                
                <!--line 8-->
                <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
@@ -468,6 +426,8 @@ function renew(index){
         $note=$_POST['note'] ;
         $book_num=$_POST['book_num'];
         $name = $_SESSION['acc'];
+        $weekarray=array("日","一","二","三","四","五","六");
+        $code="(".$weekarray[date("w",strtotime($delivery))].")" ;
         $company=str_replace("有限公司","",$company);
         $company=str_replace("股份有限公司","",$company);
         $company=str_replace("公司","",$company);
@@ -475,10 +435,9 @@ function renew(index){
         $company=str_replace("土木包工業","",$company);
         $company=str_replace("工程有限公司","",$company); 
         $company=str_replace("企業行","",$company);
-         //line_call("修改訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
-         
-	 //line_call("修改訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
-	 
+        $codea="";
+       // line_call("修改訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$codea,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
+          
          $sql = "update `saleform` set status='R' where id='$cid ' ";
          mysqli_query($db, $sql);
         $sqlRN="INSERT INTO `saleform`(`book_date`,`book_num`,`company`, `place`, `work_case`, `strength`, `type`, `quantity`, `work_type`, `code`, `qc`, `qc_time`, `qc_time2`, `user`, `tel`, `delivery`, `delivery_time`, `delivery_time2`, `sale`, `note`, `status`, `filled_in`) VALUES 

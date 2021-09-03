@@ -229,23 +229,24 @@
 		 $delivery=$_POST['date'];
 		 $sale=$_POST['sale'];
 		 $note=$_POST['note'];
-		 
+		 $weekarray=array("日","一","二","三","四","五","六");
+         $code="(".$weekarray[date("w",strtotime($delivery))].")" ;
+ 
 		 require 'db_login.php';
-		 $company=str_replace("有限公司","",$company);
-		 $company=str_replace("股份有限公司","",$company);
+		 $company=str_replace("有限公司","",$company); 
+		 $company=str_replace("水泥製品股份有限公司","",$company);
+		 $company=str_replace("股份","",$company);
 		 $company=str_replace("公司","",$company);
 		 $company=str_replace("工程行","",$company);  
 		 $company=str_replace("土木包工業","",$company);
 		 $company=str_replace("工程有限公司","",$company); 
 		 $company=str_replace("企業行","",$company);
-		 //$sql = "INSERT INTO `saleform`(`book_date`, `company`, `place`, `work_select`, `work_case`, `strength`, `type`,`quantity`, `work_type`, `code`, `qc`, `qc_time`, `qc_time2`, `user`, `tel`, `delivery`, `delivery_time`, `delivery_time2`, `sale`, `note`, `status`, `filled_in`) VALUES 
-		 //('$book_date', '$company', '$place', '$work_select', '$work_case', '$strength', '$type', '$quantity', '$work_type', '$code','$qc','$qc_time','$qc_time2', '$user', '$tel', '$delivery', '$delivery_time', '$delivery_time2', '$sale', '$note','N','$name')";
 		 $sql = "INSERT INTO `saleform`(`book_date`, `book_num`,`company`, `place`, `work_case`, `strength`, `type`,`quantity`, `work_type`, `code`, `qc`, `qc_time`, `qc_time2`, `user`, `tel`, `delivery`, `delivery_time`, `delivery_time2`, `sale`, `note`, `status`, `filled_in`) VALUES 
 			('$book_date','$book_num', '$company', '$place', '$work_case', '$strength', '$type', '$quantity', '$work_type', '$code','$qc','$qc_time','$qc_time2', '$user', '$tel', '$delivery', '$delivery_time', '$delivery_time2', '$sale', '$note','N','$name')";
 			 
 		 if (mysqli_query($db, $sql)) {	
-		  
-		 	//  line_call("新增訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
+		  $codea="";
+		 	  //line_call("新增訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$codea,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
 	 /*
 		 echo '<div class="alert alert-info alert-dismissible">
 					 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -401,16 +402,7 @@ $result = mysqli_query($db,$sql);
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
 	
-	 <!--
-	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
-	   <label>工程選項：</label>
-	   <select class="form-control" name="work_select" id="type"  >
-		  		   <option value='1'>工程</option>
-				   <option value='2'>個人</option>	 
-				 <option value='3'>道路</option>
-			 </select>
-	 </div>
--->
+ 
 		 
 	 <!--line 3-->
 	  
@@ -449,13 +441,7 @@ $result = mysqli_query($db,$sql);
 		   <label>數量：</label> 
 		   <input class="form-control" name="quantity" id="quantity" value="">            
 	 </div>
-	 <!--
-	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
-		   <label>配比代號：</label> 
-		   <input class="form-control" name="code" id="code" value="" >
-				 
-	 </div>	
-	 -->
+	 
 	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
 	   <label>施工方式：</label>
 	   <select class="form-control" name="work_type" id="work_type"  >
@@ -495,7 +481,12 @@ $result = mysqli_query($db,$sql);
 	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2" >
 		   <label>業務：</label> 
 		   <select class="form-control" name="sale" id="sale"  >
-			  
+					<?php
+					  if($name=="A00041"){echo' <option value="王振宇"selected>王振宇</option>';}
+					  else if($name=="A00012"){echo' <option value="王南欽"selected>王南欽</option>';}
+					  else if($name=="A00018"){echo' <option value="林泰宏"selected>林泰宏</option>';}
+					  else if($name=="A00027"){echo' <option value="林商發"selected>林商發</option>';}
+					?>
 				   <option value='王南欽'>王南欽</option>
 				 <option value='王振宇'>王振宇</option>
 				 <option value='林商發'>林商發</option>
@@ -519,16 +510,7 @@ $result = mysqli_query($db,$sql);
 				  
 			 </select>				  
 	 </div>
-	 <!--
-	 <div class="col-12 col-xs-12 col-sm-3 col-md-3 col-lg-3 mt-2 mb-2">
-		   <label>品管時段:</label> 
-		   <select class="form-control" name="qc_time" id="qc_time"  >
-				   <option value='早上'>早上</option>
-				 <option value='下午'>下午</option>
-			  
-			 </select>			  
-	 </div>
-	 -->
+	 
 	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
 		   <label>品管時間:</label> 
 		   <input class="form-control" name="qc_time2" id="qc_time2" value="" >
@@ -546,37 +528,7 @@ $result = mysqli_query($db,$sql);
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div>
 	
-	 <!--line 6
-	 <div class="col-12 col-xs-12 col-sm-2 "  > </div> 
-		 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2">
-		   <label>聯絡人：</label> 
-		   <input class="form-control" name="user" id="user" value="" >
-				 
-	 </div>	
-	 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2" >
-		   <label>電話：</label> 
-		   <input class="form-control" name="tel" id="tel" value="">            
-	 </div>
-	 <div class="col-12 col-xs-12 col-sm-2 "> </div>
--->
-	  <!--line 7
-	  <div class="col-12 col-xs-12 col-sm-2 "  > </div> 
-		 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2">
-		   <label>出貨時間：</label> 
-		  
-		   <input type="text" class="form-control content date" name="date" id="datepicker"  require>      
-	 </div>	
-	 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-2 mb-2" >
-		   <label>業務：</label> 
-		   <select class="form-control" name="sale" id="sale"  >
-				   <option value='王南欽'>王南欽</option>
-				 <option value='王振宇'>王振宇</option>
-				 <option value='林商發'>林商發</option>
-			 </select>	
-					
-	 </div>
-	 <div class="col-12 col-xs-12 col-sm-2 "> </div>
-	 -->
+	 
 <!--line 8-->
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div>
 	<div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
