@@ -245,8 +245,8 @@
 			('$book_date','$book_num', '$company', '$place', '$work_case', '$strength', '$type', '$quantity', '$work_type', '$code','$qc','$qc_time','$qc_time2', '$user', '$tel', '$delivery', '$delivery_time', '$delivery_time2', '$sale', '$note','N','$name')";
 			 
 		 if (mysqli_query($db, $sql)) {	
-		  $codea="";
-		 	  //line_call("新增訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$codea,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
+		   
+		 	//  line_call("新增訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
 	 /*
 		 echo '<div class="alert alert-info alert-dismissible">
 					 <button type="button" class="close" data-dismiss="alert">&times;</button>

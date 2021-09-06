@@ -176,8 +176,8 @@ jQuery(document).ready(function() {
 				    mysqli_query($db, $sql);
 				}
 				if (mysqli_query($db, $sql)) {
-					$codea="";
-					   // line_call("刪除訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$codea,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
+					 
+					 //   line_call("刪除訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
 	
 					?>	
 					 

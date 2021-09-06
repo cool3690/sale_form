@@ -435,8 +435,8 @@ function renew(index){
         $company=str_replace("土木包工業","",$company);
         $company=str_replace("工程有限公司","",$company); 
         $company=str_replace("企業行","",$company);
-        $codea="";
-       // line_call("修改訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$codea,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
+        
+       // line_call("修改訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
           
          $sql = "update `saleform` set status='R' where id='$cid ' ";
          mysqli_query($db, $sql);

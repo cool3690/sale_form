@@ -1,7 +1,7 @@
 <?php 
 	function line_call($state,$book_date,$company,$place,$work_case,$strength,$quantity,$work_type,$code,$qc,$user,$tel,$delivery,$sale,$note) { 
 		$token = "tPYQS1mWhyKSNtupjLAS7ZKmRkPOUuyqGTmi5xWuscm";
-		$message ="\n".$state."\n業務:".$sale."\n出貨時間:".$delivery."\n公司:".$company."\n地點:".$place.
+		$message ="\n".$state."\n業務:".$sale."\n出貨時間:".$delivery.$code."\n公司:".$company."\n地點:".$place.
 		"\n工程名稱:".$work_case."\n強度:".$strength."\n數量:".$quantity."方"."\n施工方式：".$work_type.
 		"\n品管：".$qc."\n聯絡人：".$user."\n電話：".$tel."\n訂貨日期：".$book_date."\n備註:".$note;
 		$curl = curl_init(); 
