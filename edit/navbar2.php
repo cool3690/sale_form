@@ -196,7 +196,7 @@ function isMobileCheck(){
 		<div style="background-color:#00E492; height:38px;">
 		  <a href="index.php"  ><img class="PC_img" align="left"  src="../images/logo.png" width="23"  height="17" /></a>
 		 <center style="text-align: center;vertical-align: middle; ">
-		 <font class="PC_font" color="#FFFFFF "> 全興合約系統</font></center>
+		 <font class="PC_font" color="#FFFFFF "style="font-family: Roboto;"> 全興合約系統</font></center>
 	 </div>
 	 
 	 
@@ -232,7 +232,7 @@ function isMobileCheck(){
 	 <div style="background-color:#00E492; height:54px;">
 		  <a href="index.php"  ><img class="PC_img" align="left"  src="../images/logo.png"   width="40"  height="30" /></a>
 		 <center style="text-align: center;vertical-align: middle; ">
-		 <font class="PC_font" color="#FFFFFF "> 全興合約系統</font></center>
+		 <font class="PC_font" color="#FFFFFF "style="font-family: Roboto;"> 全興合約系統</font></center>
 	 </div>  
 	 
 <nav class="navbar navbar-expand-xl navbar-expand-sm navbar-expand-md navbar-expand-lg bg-transparent navstyle  pc_nav" id="navbar" >

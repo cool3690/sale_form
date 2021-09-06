@@ -38,16 +38,26 @@
 			}
 		}
 		 $date=date('Y/m/d');
-		 $sql_count =  "SELECT `book_num`, COUNT(*) FROM `erp_form` GROUP BY `book_num` HAVING COUNT(*) > 1";
-	 $sql = "INSERT INTO `erp_form`(`book_num`,`date`, `company`, `work_case`,`status`) VALUES 
-			('$book_num','$date','$company', '$work_case','N')";
-			 
-		 if (mysqli_query($db, $sql)) {
-              echo '<div class="alert alert-info alert-dismissible">
-					 <button type="button" class="close" data-dismiss="alert">&times;</button>
-					 <i class="far fa-check-circle fa-lg pr-3" style="color:blue;"></i><strong>新增成功</strong><br>
-				   </div>';
-         }
+		 $sql_count =  "SELECT `book_num` FROM `erp_form` where `book_num`='$book_num' ";
+		 $result_c =mysqli_query($db,$sql_count);
+		 if(mysqli_num_rows($result_c)!=0){
+			echo '<div class="alert alert-info alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<i class="fas fa-exclamation-circle fa-lg pr-3" style="color:red;"></i><strong>重複新增</strong><br>
+		</div>';
+		 } 
+		 else{
+				$sql = "INSERT INTO `erp_form`(`book_num`,`date`, `company`, `work_case`,`status`) VALUES 
+				('$book_num','$date','$company', '$work_case','N')";
+				
+			if (mysqli_query($db, $sql)) {
+				echo '<div class="alert alert-info alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<i class="far fa-check-circle fa-lg pr-3" style="color:blue;"></i><strong>新增成功</strong><br>
+					</div>';
+			}
+		 }
+	
      }	
 		
 	?>

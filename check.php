@@ -177,7 +177,7 @@ jQuery(document).ready(function() {
 				}
 				if (mysqli_query($db, $sql)) {
 					 
-					 //   line_call("刪除訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
+					   // line_call("刪除訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
 	
 					?>	
 					 
@@ -370,7 +370,7 @@ jQuery(document).ready(function() {
 						'.$row["tel"].'</font>
 					</td>';
 						?>
-						<td class="align-left  align-middle" style="line-height:30px;">  
+						<td class="align-left  align-middle" style="line-height:30px;color:<?=$color;?>;">  
 							 
 							 
  
@@ -385,9 +385,11 @@ jQuery(document).ready(function() {
 							 <img src="images/trash.png"  width="46"  height="46" onmouseover="this.src='images/trash1.png';"
 							onmouseout="this.src='images/trash.png';"onmousedown="this.src='images/trash2.png';" >
 							 </button>
+							<?php
+							 if($color=="red"){echo'<br>已刪除';} 
+							 ?>
 							 
-							 
-                            </td>
+                        </td>
 					 
 						<tr>
 					<?php	
