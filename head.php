@@ -10,7 +10,7 @@
 	<link  href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.css" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-	 
+	<link rel="icon" href="images/favicon.ico" type="image/ico">
 	<?php
 		session_start();
 	?>

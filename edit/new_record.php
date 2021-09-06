@@ -38,7 +38,7 @@
 			}
 		}
 		 $date=date('Y/m/d');
-		
+		 $sql_count =  "SELECT `book_num`, COUNT(*) FROM `erp_form` GROUP BY `book_num` HAVING COUNT(*) > 1";
 	 $sql = "INSERT INTO `erp_form`(`book_num`,`date`, `company`, `work_case`,`status`) VALUES 
 			('$book_num','$date','$company', '$work_case','N')";
 			 
