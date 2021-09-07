@@ -3,12 +3,13 @@
   <head>
   <?php 
 	  include_once ("head.php"); 
+	  include_once("nav_fix.php");
 	  require '../db_login.php';
 	?>
    <link rel="stylesheet" href="css/n_fix.css"> 	 
   </head>
    
-  <title>訂單輸入表</title>
+  <title>報修表單</title>
   
    
 </head>
