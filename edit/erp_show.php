@@ -86,8 +86,8 @@
 				$ndate2=$_SESSION['date'];
 			}
 			else{
-				$ndate2=date("Y-m-d");//date("Y-m-d",strtotime("+10 day"));
-				$ndate=date("Y-m-d");
+				$ndate2=date("2021-12-31"); //date("Y-m-d");//date("Y-m-d",strtotime("+10 day"));
+				$ndate=date("2021-08-21"); //date("Y-m-d");
 				$ndatetmp=$ndate;
 				$daycount=7;
 			} 
