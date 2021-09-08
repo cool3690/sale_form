@@ -21,43 +21,28 @@
 	 $name = $_SESSION['acc'];
 	
 	 if(isset($_POST['submit'])){
-		 $book_num=$_POST['book_num'];
-		 $company = $_POST['company'];
-		 $work_case=$_POST['work_case'];
-		
-		 if (strpos($company, '-')== false) {
-		 
-		}
-		else{
-			$tmp_company = explode("-", $company);
-			$company=$tmp_company[1];
-			$sql="select c_id from customer where c_id='$tmp_company[0]'";
-			$result = mysqli_query($db, $sql);
-			if(mysqli_num_rows ( $result )==0){
-				$sql_in="insert into customer (`c_id`,`company`) values ('$tmp_company[0]','$tmp_company[1]')";
-				mysqli_query($db,$sql_in);
-			}
-		}
 		 $date=date('Y/m/d');
-		 $sql_count =  "SELECT `book_num` FROM `erp_form` where `book_num`='$book_num' ";
-		 $result_c =mysqli_query($db,$sql_count);
-		 if(mysqli_num_rows($result_c)!=0){
+		 $depart=$_POST['depart'];
+		 $myname=$_POST['myname'];
+		 $fix_date=$_POST['fix_date'];
+		 $company = $_POST['company'];
+		 $equipment=$_POST['equipment'];
+		 $item = $_POST['item'];
+		 $quantity=$_POST['quantity'];
+		 $unit=$_POST['unit'];
+		 $fee=$_POST['fee'];
+		 $note=$_POST['note'];
+		  
+		$sql_in="insert into fix_form (`date`,`depart`,`myname`,`fix_date`,`equipment`,`item`,`company`,`quantity`,`unit`,`fee`,`note`) values 
+		('$date','$depart','$myname','$fix_date','$equipment','$item','$company','$quantity','$unit','$fee','$note')";
+		 
+		if (mysqli_query($db, $sql_in)) {
 			echo '<div class="alert alert-info alert-dismissible">
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
-			<i class="fas fa-exclamation-circle fa-lg pr-3" style="color:red;"></i><strong>重複新增</strong><br>
-		</div>';
-		 } 
-		 else{
-				$sql = "INSERT INTO `erp_form`(`book_num`,`date`, `company`, `work_case`,`status`) VALUES 
-				('$book_num','$date','$company', '$work_case','N')";
-				
-			if (mysqli_query($db, $sql)) {
-				echo '<div class="alert alert-info alert-dismissible">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<i class="far fa-check-circle fa-lg pr-3" style="color:blue;"></i><strong>新增成功</strong><br>
-					</div>';
-			}
-		 }
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<i class="far fa-check-circle fa-lg pr-3" style="color:blue;"></i><strong>新增成功</strong><br>
+				</div>';
+		}
+		   
 	
      }	
 		
@@ -65,7 +50,7 @@
 	 
 <div class="container">
 	
-<form  id="myform" name="myform" action="new_record.php" method="post" enctype="multipart/form-data">
+<form  id="myform" name="myform" action="new_fix.php" method="post" enctype="multipart/form-data">
   
   <!-- ?status_title=2-->
    <div class="container" > <br>
@@ -147,6 +132,76 @@
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
 	    
+	  <!--line 2-->
+	  <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
+	 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-3">
+		 
+		 <label>設備：</label> 
+		   <input list="equipment" name="equipment" class="form-control"></label>
+		   <datalist  name="equipment" id="equipment">
+				<option value="破碎機1">
+				<option value="粉碎機2">
+				<option value="污泥貯存區">
+				<option value="砂石皮帶區域">
+				<option value="CLSM入料口2">
+				<option value="截流溝集水井">
+				<option value="移動式抽水馬達">
+				<option value="怪手200-1號">
+				<option value="怪手200-2號">
+				<option value="怪手200-3號">
+				<option value="怪手200-5號">
+				<option value="怪手200-6號(唐榮)">
+				<option value="怪手200-7號">
+				<option value="怪手320-8號(燁聯)">
+				<option value="小山貓S130">
+				<option value="鏟裝機90-3型">
+				<option value="鏟裝機90-5型">
+				<option value="鏟裝機90-6型">
+				<option value="場內備用">
+				<option value="AHU-3829 3噸半">
+				<option value="空壓機">
+				<option value="廠區其他區域">
+				<option value="庫存備用品">
+
+			</datalist>
+	</div>
+	 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-3 "  >
+		   <label>維修項目：</label> 
+		   <input list="item" name="item" class="form-control"></label>
+		   <datalist  name="item" id="item">
+		   <option value="1HP抽水馬達-1">
+			<option value="1HP抽水馬達-2">
+			<option value="1HP抽水馬達-3">
+			<option value="3HP抽水馬達-1">
+			<option value="3HP抽水馬達-2">
+			<option value="3HP抽水馬達-3">
+			<option value="砂石皮帶">
+			<option value="破碎機輸送帶-平行">
+			<option value="破碎機輸送帶-斜行">
+			<option value="破碎機齒刀片">
+			<option value="破(粉)碎機零件">
+			<option value="馬達">
+			<option value="線路檢修">
+			<option value="保養 換機油等">
+			<option value="引擎類">
+			<option value="壓縮機(冷氣)">
+			<option value="重機具輪胎">
+			<option value="輪胎耗材">
+			<option value="拆裝工資">
+			<option value="其他零件維修類">
+			<option value="牛油、機油系列">
+			<option value="震動篩網2">
+			<option value="輪胎">
+			<option value="吊車及機具託運費用">
+			<option value="增購機具">
+			</datalist>
+	 </div>   
+	 
+
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	    
 	 
 	  <!--line 3-->
 	  <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
@@ -184,8 +239,7 @@
 	 
 	 <div class="col-12 col-xs-12 col-sm-8 col-md-8 col-lg-8 mt-2 mb-2">
 		   <label>備註：</label> 
-		   <textarea class="form-control" name="note" id="note" value="">
-		   </textarea>    
+		   <textarea class="form-control" name="note" id="note" value=""></textarea>
 	 </div>	
 	  
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
