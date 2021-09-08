@@ -1,123 +1,122 @@
-
-   <style>
- /*new*/
+<style>
+ /*rec*/
  
 
-@media (min-width: 601px) and (max-width: 4000px) { 
+ @media (min-width: 601px) and (max-width: 4000px) { 
  
-	nav{	 
-	background: linear-gradient(to right,  #fff,#fff);
+ nav{	 
+ background: linear-gradient(to right,  #fff,#fff);
 
-	overflow:hidden;
-	}
-	 
-	#navbardrop::after {
-		content: '';
-		display: block;
-		width: 0;
-		height:3px;
-		background: #00d550  !important;
-		transition: width 1s;
-	}
-
- 
-	#navbardrop:hover  {
-		background-color:#ACF0CB !important;
-		 
-	}
-	.PC_img{
-		margin-left:110px;
-		margin-top:11px;
-	}
-	.PC_font{
-		margin-left:-100px;
-		font-size:28px;
-		 
-		text-align: center;
-	}
-	center{
-		padding-top:5px;
-	}
-	.nav-item.pc_new{
- 		border-bottom: 3px solid #00E492;	
-		margin-top:-20px;
-        height:48px;
-		width:130px;
-		 
-	} 
+ overflow:hidden;
+ }
   
-	.pc_nav{
-		 
-		box-shadow: -1px 0px 10px 5px rgba(0, 228, 146, 0.2);
-		 overflow:hide;
-       height:48px;
-	} 
-	.pc_rec{
-		margin-top:-19px;
-		width:130px;
-		height: 48px;
-	}
+ #navbardrop::after {
+	 content: '';
+	 display: block;
+	 width: 0;
+	 height:3px;
+	 background: #00d550  !important;
+	 transition: width 1s;
+ }
+
+ 
+ #navbardrop:hover  {
+	 background-color:#ACF0CB !important;
+	  
+ }
+ .PC_img{
+	 margin-left:110px;
+	 margin-top:11px;
+ }
+ .PC_font{
+	 margin-left:-100px;
+	 font-size:28px;
+	  
+	 text-align: center;
+ }
+ center{
+	 padding-top:5px;
+ }
+ .pc_new{
+	 background-color:#fff !important;
+	  margin-top:-20px;
+	 height:48px;
+	 width:130px;
+	  
+ } 
+  
+ .pc_nav{
+	box-shadow: -1px 0px 10px 5px rgba(0, 228, 146, 0.2);
+	  overflow:hide;
+	height:48px;
+ } 
+ .pc_rec{
+	 margin-top:-20px;
+	 width:130px;
+	 height: 48px;
+	 border-bottom: 3px solid #00E492;	 
+ }
 }
 
 @media (min-width: 450px) and (max-width: 600px) {
-	nav{	 
-		background: linear-gradient(to right,  #fff,#fff);
+ nav{	 
+	 background: linear-gradient(to right,  #fff,#fff);
 
-	}
-	.navbar-collapse {
-	  display: flex;
-	  flex-wrap: nowrap;
-	}
+ }
+ .navbar-collapse {
+   display: flex;
+   flex-wrap: nowrap;
+ }
 
-	.navbar-nav {
-	  flex-direction: row;
-	} 
+ .navbar-nav {
+   flex-direction: row;
+ } 
+  
+ #navbardrop::after {
+	 content: '';
+	 display: block;
+	 width: 0;
+	 height:3px;
+	 background: #00d550  !important;
+	 transition: width 1s;
+ }
+ #navbardrop:hover  {
+	 background-color:#ACF0CB !important;
+	 margin-top:1px ;
+	 height: 48px;
+ }
+ 
+  .PC_img{
+	 margin-left:50px;
+	 margin-top:11px;
+ }
+ .PC_font{
+	  
+	 margin-left:-50px;
+	  
+	 font-size:28px;
+	 text-align: center;
+ } 
+ center{
+	 padding-top: 5px;
+ }
+ .pc_new{
+	 margin-top:-30px;
 	 
-	#navbardrop::after {
-		content: '';
-		display: block;
-		width: 0;
-		height:3px;
-		background: #00d550  !important;
-		transition: width 1s;
-	}
-	#navbardrop:hover  {
-		background-color:#ACF0CB !important;
-		margin-top:1px ;
-		height: 48px;
-	}
- 
- 
-	 .PC_img{
-		margin-left:50px;
-		margin-top:11px;
-	}
-	.PC_font{
-		 
-		margin-left:-50px;
-		 
-		font-size:28px;
-		text-align: center;
-	} 
-	center{
-		padding-top: 5px;
-	}
-	.pc_new{
-		margin-top:-30px;
-		border-bottom: 3px solid #00E492;	 
-		width:130px;
-		height: 48px;
-	} 
-	.pc_nav{
-		box-shadow: -1px 0px 10px 5px rgba(0, 228, 146, 0.2);
-		 overflow:hide;
-       height:48px;
-	} 
-	.pc_rec{
-		margin-top:-30px;
-		width:130px;
-		height: 48px;
-	}
+	 width:130px;
+	 height: 48px;
+ } 
+ .pc_nav{
+	box-shadow: -1px 0px 10px 5px rgba(0, 228, 146, 0.2);
+	  overflow:hide;
+	height:48px;
+ } 
+ .pc_rec{
+	 margin-top:-30px;
+	 width:130px;
+	 height: 48px;
+	 border-bottom: 3px solid #00E492;	 
+ }
 } 
  
 @media (min-width: 0px) and (max-width: 449px) {
@@ -139,7 +138,7 @@
 	}
 	 
 	.pc_new{
-		border-bottom: 3px solid #ACF0CB;	
+		background-color:#fff !important;
 		 
         height:80px;
 		width:68px;
@@ -149,6 +148,7 @@
 		box-shadow: -1px 0px 10px 5px rgba(0, 228, 146, 0.2);
 		 overflow:hide;
        height:32px;
+	   border-bottom: 3px solid #00E492;	 
 	} 
 } 
  
@@ -181,13 +181,13 @@ function isMobileCheck(){
 } 
 ?>
 <script>
-	$(function(){
-	if($(window).width()<480){ //當視窗小於480時才運作
-	$('.navbar a').on('click', function(){
-		$('.navbar-toggle').click();
-	});
-	}
-	});
+$(function(){
+if($(window).width()<480){ //當視窗小於480時才運作
+$('.navbar a').on('click', function(){
+    $('.navbar-toggle').click();
+  });
+}
+});
 </script>
 <?php
     if(isMobileCheck()){//是行動裝置
@@ -197,10 +197,8 @@ function isMobileCheck(){
 		  <a href="new_fix.php"  ><img class="PC_img" align="left"  src="../images/logo.png" width="23"  height="17" /></a>
 		 <center style="text-align: center;vertical-align: middle; ">
 		 <font class="PC_font" color="#FFFFFF "style="font-family: Roboto;"> 全興報修單</font></center>
-	 </div>
-	 
-	 
-
+	 </div>   
+		
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -225,44 +223,44 @@ function isMobileCheck(){
   </div>
 </nav>
 	 
+	 
 	 <?php
         
     }else{//不是行動裝置
      ?>    
-	 <div style="background-color:#00E492; height:54px;">
+	  <div style="background-color:#00E492; height:54px;">
 		  <a href="new_fix.php"  ><img class="PC_img" align="left"  src="../images/logo.png"   width="40"  height="30" /></a>
 		 <center style="text-align: center;vertical-align: middle; ">
-		 <font class="PC_font" color="#FFFFFF "style="font-family: Roboto;"> 全興報修單</font></center>
-	 </div>  
+		 <font class="PC_font" color="#FFFFFF "style="font-family: Roboto;"> 全興合約系統</font></center>
+	 </div>   
 	 
-<nav class="navbar navbar-expand-xl navbar-expand-sm navbar-expand-md navbar-expand-lg bg-transparent navstyle  pc_nav" id="navbar" >
+	 <nav class="navbar navbar-expand-xl navbar-expand-sm navbar-expand-md navbar-expand-lg bg-transparent navstyle  pc_nav" id="navbar" >
  
-	<div class=" navbar-collapse mt-3 " id="navbarSupportedContent" > <img src="../images/logo.png" style="opacity: 0;"width="46"  height="34"  /> &emsp;
-		<ul class="navbar-nav mr-auto ">
-			 
-                            	 		
-		<li><font color="white" style="opacity: 0;">0000</font> </li>
-						<li class="nav-item pc_new">
-								<a class=" nav-link myset" id="navbardrop" href="new_fix.php">
-									 
-										<font color="black"><b><center>報修表單</center></b></font> </a>
-							</li>
-						&emsp;
-							<li class="nav-item  pc_rec">
-								<a class=" nav-link ss" id="navbardrop" href="fix_show.php">
-								<font color="black"><b><center style=" ">報修紀錄</center></b></font></a>
-							</li>&emsp;
-							
-							
-						<?php	
-				 
-		 
-			?>	
-		</ul>
-		 
-	</div>
+ <div class=" navbar-collapse mt-3 " id="navbarSupportedContent" > <img src="../images/logo.png" style="opacity: 0;"width="46"  height="30"  /> &emsp;
+	 <ul class="navbar-nav mr-auto ">
+		  
+									  
+	 <li><font color="white" style="opacity: 0;">0000</font> </li>
+					 <li class="nav-item pc_new">
+							 <a class=" nav-link myset" id="navbardrop" href="new_fix.php">
+								  
+									 <font color="black"><b><center>報修表單</center></b></font> </a>
+						 </li>
+					 &emsp;
+						 <li class="nav-item  pc_rec">
+							 <a class=" nav-link ss" id="navbardrop" href="fix_show.php">
+							 <font color="black"><b><center style=" ">報修紀錄</center></b></font></a>
+						 </li>&emsp;
+						 
+						 
+					 <?php	
+			  
+	  
+		 ?>	
+	 </ul>
+	  
+ </div>
 </nav>
-	 
 		<?php
     }
 ?>
