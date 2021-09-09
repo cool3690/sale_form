@@ -33,8 +33,8 @@
 		 $fee=$_POST['fee'];
 		 $note=$_POST['note'];
 		  
-		$sql_in="insert into fix_form (`date`,`depart`,`myname`,`fix_date`,`equipment`,`item`,`company`,`quantity`,`unit`,`fee`,`note`) values 
-		('$date','$depart','$myname','$fix_date','$equipment','$item','$company','$quantity','$unit','$fee','$note')";
+		$sql_in="insert into fix_form (`date`,`depart`,`myname`,`fix_date`,`equipment`,`item`,`company`,`quantity`,`unit`,`fee`,`note`,`status`) values 
+		('$date','$depart','$myname','$fix_date','$equipment','$item','$company','$quantity','$unit','$fee','$note','N')";
 		 
 		if (mysqli_query($db, $sql_in)) {
 			echo '<div class="alert alert-info alert-dismissible">

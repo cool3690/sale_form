@@ -28,7 +28,7 @@
            { 
              for($i=0;$i<count($arr);$i++)
                 {
-				  $sql = "update `erp_form` set status='D' where id='$arr[$i]' ";
+				  $sql = "update `fix_form` set status='D' where id='$arr[$i]' ";
 				    
 				    mysqli_query($db, $sql);
 				}
@@ -43,10 +43,11 @@
 		if( count($arr)>0)
 		{  
 		  for($i=0;$i<count($arr);$i++)
-			 {echo '<script language="javascript">';
+			 {echo $arr[$i];
+				  echo '<script language="javascript">';
 				 
-				echo "window.location.href='show_jump.php?c1=$arr[$i]'";
-				echo '</script>';
+			 	echo "window.location.href='fix_jump.php?c1=$arr[$i]'";
+				 echo '</script>';
 				 
 			 }
 		}
@@ -56,8 +57,7 @@
 		<div class="row mt-3 mb-3">	
 			<div class="col-3 col-xs-6 col-sm-4 col-md-6 col-lg-8"></div>
 			<div class="col-9 col-xs-6 col-sm-8 col-md-6 col-lg-4">
-				
-					<div class="row justify-content-end"align="right " style="margin-top:32px;margin-bottom:16px;">
+			<div class="row justify-content-end"align="right " style="margin-top:32px;margin-bottom:16px;">
 				 
 			 <input type="date" class="form-control find"style=" height:44px; width:170px; margin-left:10px;" name="date"  id="date" placeholder="開始日期	" required>
 			 &emsp; 	<button type="submit" class="btn_choice" name="submit" style="border-width:0px;outline : none; " >
@@ -91,7 +91,7 @@
 				$daycount=7;
 			} 
 			//設定分頁------------------------------------------------------------------------------
-			$sql = "SELECT * FROM fix_form";// where status in('N','RN')and date between '$ndate' and '$ndate2'order by  CONVERT(`company` using big5),book_num ASC";
+			$sql = "SELECT * FROM fix_form where status in('N','RN')" ;// and date between '$ndate' and '$ndate2'order by  CONVERT(`company` using big5),book_num ASC";
 			$date=date('Y-m-d');
 		  
 			$result = mysqli_query($db, $sql);//.' LIMIT '.$stacle_page.', '.$per_num
