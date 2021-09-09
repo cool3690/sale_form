@@ -91,7 +91,7 @@
 				$daycount=7;
 			} 
 			//設定分頁------------------------------------------------------------------------------
-			$sql = "SELECT * FROM erp_form where status in('N','RN')and date between '$ndate' and '$ndate2'order by  CONVERT(`company` using big5),book_num ASC";
+			$sql = "SELECT * FROM fix_form";// where status in('N','RN')and date between '$ndate' and '$ndate2'order by  CONVERT(`company` using big5),book_num ASC";
 			$date=date('Y-m-d');
 		  
 			$result = mysqli_query($db, $sql);//.' LIMIT '.$stacle_page.', '.$per_num
@@ -107,9 +107,9 @@
 				<thead>
 					<tr class='' bgcolor='#009761'>
 					<th class='text-center align-middle' style="border-radius:5% 0% 0% 0%; border: none !important;">
-					填單日期<br>報修日期<br> 部門-姓名</th>
+					 報修日期<br> 部門-姓名</th>
 					  
-					 <th class='text-center align-middle' >設備<br>維修項目</th>
+					<th class='text-center align-middle' >設備<br>維修項目</th>
 					<th class='text-center align-middle' > 廠商</th>
                     <th class='text-center align-middle' > 數量<br>價錢</th>
                     <th class='text-center align-middle' > 備註</th>
@@ -124,19 +124,28 @@
 						<tr>
 			 
 						<td class="text-center align-middle" bgcolor="#fff" style="	outline:0;line-height:30px; "> 
-						<?=$row["date"];?> <br>
-						<?=$row["book_num"];?> 
-						</td>
 					 
+						<?=$row["fix_date"];?> <br>
+                        <?=$row["depart"]."-".$row["myname"];?>  
+						</td>
+                        <td class="text-center align-middle" style="line-height:30px; ">  
+                        <?=$row["equipment"];?> <br>
+                        <?=$row["item"];?>
+                    
+                        </td>
 					<td class="text-center align-middle" style="line-height:30px; ">  
 					<?=$row["company"];?> 
 					 
 				 
 					</td>
 					 <td class="text-center align-middle" style="line-height:30px; ">  
-                     <?=$row["work_case"];?>  
+                     <?=$row["quantity"]." ".$row["unit"];?> <br>
+                        <?=$row["fee"]." 元";?>
 					</td>
-					  
+                    <td class="text-center align-middle" style="line-height:30px; ">  
+                     
+                        <?=$row["note"] ;?>
+					</td>
 						 
 						<td class="align-left  align-middle" style="line-height:30px;">  
 						<button type="submit" class="btn_choice "  name="pen[]"id='pen'  style="border-width:0px;outline : none;" value="<?=$row["id"]?>">
