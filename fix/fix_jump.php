@@ -303,7 +303,7 @@
       }
          $sql = "update `fix_form` set status='R' where id='$cid ' ";
          mysqli_query($db, $sql);
-         $sql_in="insert into fix_form (`date`,`depart`,`myname`,`fix_date`,`equipment`,`item`,`company`,`quantity`,`unit`,`fee`,`note`,`status`) values 
+         $sqlRN="insert into fix_form (`date`,`depart`,`myname`,`fix_date`,`equipment`,`item`,`company`,`quantity`,`unit`,`fee`,`note`,`status`) values 
          ('$date','$depart','$myname','$fix_date','$equipment','$item','$company','$quantity','$unit','$fee','$note','RN')";
           
        mysqli_query($db, $sqlRN);                  
