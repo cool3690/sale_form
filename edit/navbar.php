@@ -1,158 +1,5 @@
-<style>
- /*rec*/
+<link rel="stylesheet" href="../css/nav_show.css"/>
  
-
- @media (min-width: 601px) and (max-width: 4000px) { 
- 
- nav{	 
- background: linear-gradient(to right,  #fff,#fff);
-
- overflow:hidden;
- }
-  
- #navbardrop::after {
-	 content: '';
-	 display: block;
-	 width: 0;
-	 height:3px;
-	 background: #00d550  !important;
-	 transition: width 1s;
- }
-
- 
- #navbardrop:hover  {
-	 background-color:#ACF0CB !important;
-	  
- }
- .PC_img{
-	 margin-left:110px;
-	 margin-top:11px;
- }
- .PC_font{
-	 margin-left:-100px;
-	 font-size:28px;
-	  
-	 text-align: center;
- }
- center{
-	 padding-top:5px;
- }
- .pc_new{
-	 background-color:#fff !important;
-	  margin-top:-20px;
-	 height:48px;
-	 width:130px;
-	  
- } 
-  
- .pc_nav{
-	box-shadow: -1px 0px 10px 5px rgba(0, 228, 146, 0.2);
-	  overflow:hide;
-	height:48px;
- } 
- .pc_rec{
-	 margin-top:-20px;
-	 width:130px;
-	 height: 48px;
-	 border-bottom: 3px solid #00E492;	 
- }
-}
-
-@media (min-width: 450px) and (max-width: 600px) {
- nav{	 
-	 background: linear-gradient(to right,  #fff,#fff);
-
- }
- .navbar-collapse {
-   display: flex;
-   flex-wrap: nowrap;
- }
-
- .navbar-nav {
-   flex-direction: row;
- } 
-  
- #navbardrop::after {
-	 content: '';
-	 display: block;
-	 width: 0;
-	 height:3px;
-	 background: #00d550  !important;
-	 transition: width 1s;
- }
- #navbardrop:hover  {
-	 background-color:#ACF0CB !important;
-	 margin-top:1px ;
-	 height: 48px;
- }
- 
-  .PC_img{
-	 margin-left:50px;
-	 margin-top:11px;
- }
- .PC_font{
-	  
-	 margin-left:-50px;
-	  
-	 font-size:28px;
-	 text-align: center;
- } 
- center{
-	 padding-top: 5px;
- }
- .pc_new{
-	 margin-top:-30px;
-	 
-	 width:130px;
-	 height: 48px;
- } 
- .pc_nav{
-	box-shadow: -1px 0px 10px 5px rgba(0, 228, 146, 0.2);
-	  overflow:hide;
-	height:48px;
- } 
- .pc_rec{
-	 margin-top:-30px;
-	 width:130px;
-	 height: 48px;
-	 border-bottom: 3px solid #00E492;	 
- }
-} 
- 
-@media (min-width: 0px) and (max-width: 449px) {
-	nav{	 
-		background: linear-gradient(to right,  #fff,#fff);
-	}
-	.PC_img{
-		margin-left:50px;
-		margin-top:12px;
-	}
-	.PC_font{
-		 
-		margin-left:-50px;
-		font-size:16px;
-		text-align: center;
-	} 
-	center{
-		padding-top: 8px;
-	}
-	 
-	.pc_new{
-		background-color:#fff !important;
-		 
-        height:80px;
-		width:68px;
-		overflow:hidden;　
-	} 
-	.pc_nav{
-		box-shadow: -1px 0px 10px 5px rgba(0, 228, 146, 0.2);
-		 overflow:hide;
-       height:32px;
-	   border-bottom: 3px solid #00E492;	 
-	} 
-} 
- 
-</style> 
 <?php
 //是否為行動裝置
 function isMobileCheck(){
@@ -236,11 +83,11 @@ $('.navbar a').on('click', function(){
 	 
 	 <nav class="navbar navbar-expand-xl navbar-expand-sm navbar-expand-md navbar-expand-lg bg-transparent navstyle  pc_nav" id="navbar" >
  
- <div class=" navbar-collapse mt-3 " id="navbarSupportedContent" > <img src="../images/logo.png" style="opacity: 0;"width="46"  height="30"  /> &emsp;
-	 <ul class="navbar-nav mr-auto ">
+ <div class=" navbar-collapse mt-3 " id="navbarSupportedContent" >  
+	  <ul class="navbar-nav mr-auto pc_navlu">
 		  
 									  
-	 <li><font color="white" style="opacity: 0;">0000</font> </li>
+	 <li><font color="white" style="opacity: 0;">0</font> </li>
 					 <li class="nav-item pc_new">
 							 <a class=" nav-link myset" id="navbardrop" href="new_record.php">
 								  

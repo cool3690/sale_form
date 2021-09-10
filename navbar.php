@@ -89,11 +89,11 @@ $('.navbar a').on('click', function(){
 	 
 	 <nav class="navbar navbar-expand-xl navbar-expand-sm navbar-expand-md navbar-expand-lg bg-transparent navstyle  pc_nav" id="navbar" >
  
- <div class=" navbar-collapse mt-3 " id="navbarSupportedContent" > <img src="images/logo.png" style="opacity: 0;"width="46"  height="30"  /> &emsp;
-	 <ul class="navbar-nav mr-auto ">
+ <div class=" navbar-collapse mt-3 " id="navbarSupportedContent" > 
+    <ul class="navbar-nav mr-auto pc_navlu">
 		  
 									  
-	 <li><font color="white" style="opacity: 0;">0000</font> </li>
+	 <li><font color="white" style="opacity: 0;">0</font> </li>
 					 <li class="nav-item pc_new">
 							 <a class=" nav-link myset" id="navbardrop" href="new_form.php">
 								  

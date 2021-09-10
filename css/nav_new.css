@@ -23,11 +23,11 @@
 		 
 	}
 	.PC_img{
-		margin-left:110px;
+		margin-left:15%;
 		margin-top:11px;
 	}
 	.PC_font{
-		margin-left:-100px;
+		margin-left:-15%;
 		font-size:28px;
 		 
 		text-align: center;
@@ -42,7 +42,9 @@
 		width:130px;
 		 
 	} 
-  
+	.pc_navlu{
+		margin-left:13%;
+	}
 	.pc_nav{
 		 
 		box-shadow: -1px 0px 10px 5px rgba(0, 228, 146, 0.2);
