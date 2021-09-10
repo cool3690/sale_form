@@ -1,42 +1,9 @@
 <head>
 <link rel="stylesheet" href="css/nav_show.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<?php require'func/funct.php';?>
 </head>
-<style>
- /*rec*/
- @font-face {
-  font-family: myFirstFont;
-  src: local("Roboto-Black") ;
-}
-
-</style> 
-<?php
-//是否為行動裝置
-function isMobileCheck(){
-    //Detect special conditions devices
-    $iPod = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
-    $iPhone = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-    $iPad = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
-    if(stripos($_SERVER['HTTP_USER_AGENT'],"Android") && stripos($_SERVER['HTTP_USER_AGENT'],"mobile")){
-        $Android = true;
-    }else if(stripos($_SERVER['HTTP_USER_AGENT'],"Android")){
-        $Android = false;
-        $AndroidTablet = true;
-    }else{
-        $Android = false;
-        $AndroidTablet = false;
-    }
-    $webOS = stripos($_SERVER['HTTP_USER_AGENT'],"webOS");
-    $BlackBerry = stripos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
-    $RimTablet= stripos($_SERVER['HTTP_USER_AGENT'],"RIM Tablet");
-    //do something with this information
-    if( $iPod || $iPhone || $iPad || $Android || $AndroidTablet || $webOS || $BlackBerry || $RimTablet){
-        return true;
-    }else{
-        return false;
-    }
-} 
-?>
+  
 <script>
 $(function(){
 if($(window).width()<480){ //當視窗小於480時才運作
