@@ -326,7 +326,7 @@ jQuery(document).ready(function() {
 							$color="black";
 							 
 						}
-					echo '	<td class="text-center align-middle" bgcolor="#fff" style="	outline:0;line-height:30px;color:'. $color.';"> <br>
+					echo '	<td class="text-center align-middle" bgcolor="#fff" style="line-height:1px;outline:0;line-height:30px;color:'. $color.';"> <br>
 						'.$row["book_date"].'<br>'.$row["delivery"].'<br>'.$row["delivery_time"]." ".$row["delivery_time2"].$row["code"].'<br>'.$row["sale"].'
 						<br><font color="white" style="opacity: 0;">000000000000</font> 
 						</td>

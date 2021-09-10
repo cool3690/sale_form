@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/nav_show.css"/>
+<link rel="stylesheet" href="../css/nav_new.css"/>
 <?php
 //是否為行動裝置
 function isMobileCheck(){

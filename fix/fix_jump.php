@@ -178,7 +178,7 @@
             <input list="item" name="item" class="form-control"value="<?=$item;?>"></label>
             <datalist  name="item" id="item">
            
-            <option value="1HP抽水馬達-1">
+                  <option value="1HP抽水馬達-1">
                   <option value="1HP抽水馬達-2">
                   <option value="1HP抽水馬達-3">
                   <option value="3HP抽水馬達-1">
@@ -203,7 +203,7 @@
                   <option value="輪胎">
                   <option value="吊車及機具託運費用">
                   <option value="增購機具">
-                  </datalist>
+            </datalist>
       </div>   
       
 

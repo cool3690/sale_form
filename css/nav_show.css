@@ -1,5 +1,5 @@
-
- @media (min-width: 601px) and (max-width: 4000px) { 
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC');
+@media (min-width: 601px) and (max-width: 4000px) { 
  
     nav{	 
     background: linear-gradient(to right,  #fff,#fff);
@@ -28,7 +28,7 @@
 	.PC_font{
 		margin-left:-15%;
 		font-size:28px;
-		 
+        font-family:Noto Sans TC !important;
 		text-align: center;
 	}
     .pc_navlu{
@@ -93,7 +93,7 @@
     .PC_font{
          
         margin-left:-50px;
-         
+        font-family:Noto Sans TC !important;
         font-size:28px;
         text-align: center;
     } 
@@ -128,7 +128,7 @@
            margin-top:12px;
        }
        .PC_font{
-            
+        font-family:Noto Sans TC !important;
            margin-left:-50px;
            font-size:16px;
            text-align: center;

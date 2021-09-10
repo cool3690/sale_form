@@ -1,10 +1,14 @@
 <head>
 <link rel="stylesheet" href="css/nav_show.css"/>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <style>
  /*rec*/
-  
+ @font-face {
+  font-family: myFirstFont;
+  src: local("Roboto-Black") ;
+}
+
 </style> 
 <?php
 //是否為行動裝置
@@ -84,7 +88,7 @@ $('.navbar a').on('click', function(){
 	  <div style="background-color:#00E492; height:54px;">
 		  <a href="index.php"  ><img class="PC_img" align="left"  src="images/logo.png"   width="40"  height="30" /></a>
 		 <center style="text-align: center;vertical-align: middle; ">
-		 <font class="PC_font" color="#FFFFFF "style="font-family: Roboto;"> 全興訂貨系統</font></center>
+		 <font class="PC_font" color="#FFFFFF "style=" "> 全興訂貨系統</font></center>
 	 </div>   
 	 
 	 <nav class="navbar navbar-expand-xl navbar-expand-sm navbar-expand-md navbar-expand-lg bg-transparent navstyle  pc_nav" id="navbar" >
