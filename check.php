@@ -177,7 +177,7 @@ jQuery(document).ready(function() {
 				}
 				if (mysqli_query($db, $sql)) {
 					 
-					   // line_call("刪除訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
+					 //  line_call("刪除訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
 	
 					?>	
 					 
@@ -325,26 +325,33 @@ jQuery(document).ready(function() {
 						else{
 							$color="black";
 							 
-						}
-					echo '	<td class="text-center align-middle" bgcolor="#fff" style="line-height:1px;outline:0;line-height:30px;color:'. $color.';"> <br>
-						'.$row["book_date"].'<br>'.$row["delivery"].'<br>'.$row["delivery_time"]." ".$row["delivery_time2"].$row["code"].'<br>'.$row["sale"].'
-						<br><font color="white" style="opacity: 0;">000000000000</font> 
+						}?>
+						<td class="text-center align-middle" bgcolor="#fff" style="color:<?=$color;?>;"> 
+						<font style="line-height:2.5;"><?=$row["book_date"];?> </font><br>
+						<font style="line-height:0.5;"><?=$row["delivery"];?></font><br>
+						<font style="line-height:0.5;"><?=$row["delivery_time"]." ".$row["delivery_time2"].$row["code"];?></font><br>
+						<font style="line-height:2.5;"><?=$row["sale"];?></font><br>
+					 
 						</td>
 					 
-					<td class="text-center align-middle" style="line-height:30px;color:'. $color.';"> <br>
-					'.$row["company"].'<br>'
-					 
-					.$row["work_case"].'
-						<br><font color="white" style="opacity: 0;">
+				
+					<td class="text-center align-middle" style=" color:<?=$color;?>;"> <br>
+					<font style="line-height:2.5;"><?=$row["company"];?></font><br>
+						<font style="line-height:0.5;"><?=$row["work_case"];?></font><br>
+				 
+						<br><font color="white" style="opacity: 0;line-height:2.5;">
 						0000000000</font>
 					</td>
-					<td class="text-center align-middle" style="line-height:30px;color:'. $color.';"> <br>
-					'.$row["book_num"].'<br>'
-					 .$row["place"].'  
 					 
-					<br><font color="white" style="opacity: 0;">
+					<td class="text-center align-middle" style="color:<?=$color;?>;"> <br>
+					<font style="line-height:2.5;"><?=$row["book_num"];?> </font><br> 
+					<font style="line-height:0.5;"><?=$row["place"];?> </font>  
+					 
+					<br><font color="white" style="opacity: 0;line-height:2.5;">
 					00000000000</font>
 					</td>
+					<?php
+					echo '
 					<td class="text-center align-middle" style="line-height:30px;color:'. $color.';"> <br>
 						
 						'.$row["strength"].'<br>

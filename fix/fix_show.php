@@ -58,9 +58,10 @@
 			<div class="col-3 col-xs-6 col-sm-4 col-md-6 col-lg-8"></div>
 			<div class="col-9 col-xs-6 col-sm-8 col-md-6 col-lg-4">
 			<div class="row justify-content-end"align="right " style="margin-top:32px;margin-bottom:16px;">
-				 
-			 <input type="date" class="form-control find"style=" height:44px; width:170px; margin-left:10px;" name="date"  id="date" placeholder="開始日期	" required>
-			 &emsp; 	<button type="submit" class="btn_choice" name="submit" style="border-width:0px;outline : none; " >
+			<input class="form-control find" id="myInput" style=" height:44px; width:190px; margin-left:10px;" type="text" placeholder="Search..">
+			<!-- <input type="date" class="form-control"style=" height:44px; width:170px; margin-left:10px;" name="date"  id="date" placeholder="開始日期	" required>
+	-->
+			&emsp; 	<button type="submit" class="btn_choice" name="submit" style="border-width:0px;outline : none; " >
 				<img src="../images/find.png"  width="44"  height="44"  align="right">
 									</button>					
 								 
@@ -99,6 +100,7 @@
 			 
 		?>
 		<div  class=" ">
+ 
 			<form  id="myform" name="myform" action="fix_show.php" method="post" enctype="multipart/form-data">
 			 
 				<table class='table table-bordered text-center max ' style="border-collapse:collapse; ">
@@ -120,7 +122,7 @@
 				while ($row = mysqli_fetch_array($result)) {
 					$color="blue";
 					?>
-						<tbody id="searchTable">
+						<tbody id="myTable">
 						<tr>
 			 
 						<td class="text-center align-middle" bgcolor="#fff" style="	outline:0;line-height:30px; "> 
@@ -176,5 +178,16 @@
 			 mysqli_close($db);	
 		?>
 	</div>
+	 
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr ").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script></br>
 </body>
 </html>

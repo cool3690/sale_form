@@ -2,21 +2,10 @@
 <head>
 <title>Country</title>
 </head>
-<body>
-<form>
-    Select Your Country 
-    <select name="country" onchange="this.form.submit()">
-        <option value="" disabled selected>--select--</option>
-        <option value="india">India</option>
-        <option value="us">Us</option>
-        <option value="europe">Europe</option>
-    </select>
-</form>
-<?php
-   if(isset($_GET["country"])){
-       $country=$_GET["country"];
-       echo "select country is => ".$country;
-   }
-?>
+<body> 22<br>
+<font style="line-height:1;">文字內容</font><br>
+<font style="line-height:0.5;">文字內容</font><br>
+<font style="line-height:2.5;">文字內容</font><br>
+<font style="line-height:3.5;">文字內容</font><br>
 </body>
 </html>
