@@ -178,7 +178,7 @@ jQuery(document).ready(function() {
 				if (mysqli_query($db, $sql)) {
 					 
 					 //  line_call("刪除訂單",$book_date,$company,$place,$work_case,$strength,$type."/".$quantity,$work_type,$code,$qc." ".$qc_time2,$user,$tel,$delivery.$delivery_time." ".$delivery_time2,$sale,$note);
-	
+	 
 					?>	
 					 
 					<div class="col-8 col-xs-7 col-sm-6 col-md-4 col-lg-3 mt-3 mb-3">
