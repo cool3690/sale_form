@@ -21,7 +21,7 @@
 	 $name = $_SESSION['acc'];
 	
 	 if(isset($_POST['submit'])){
-		 $date=date('Y/m/d');
+		 $date=$_POST['date'];//date('Y/m/d');
 		 $depart=$_POST['depart'];
 		 $myname=$_POST['myname'];
 		 $fix_date=$_POST['fix_date'];
@@ -63,7 +63,7 @@
 	 
 	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-5 "  >
 		   <label>填單日期:</label> 
-		   <input class="form-control" name="date" id="date" value="<?=date("Y/m/d");?>"  required>
+		   <input class="form-control" name="date" id="date" value="<?=date("Y/m/d");?>" readonly="readonly" />
 				 
 	 </div>	
 	 <div class="col-12 col-xs-12 col-sm-3 col-md-3 col-lg-3 mt-5 "  >
@@ -98,7 +98,7 @@
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
 	 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-3">
 		 <label>維修日期</label>
-		 <input type="date" class="form-control" name="fix_date" id="fix_date">
+		 <input type="date" class="form-control" name="fix_date" id="fix_date" required="required">
 	</div>
 	 <div class="col-12 col-xs-12 col-sm-4 col-md-4 col-lg-4 mt-3 "  >
 		   <label>廠商：</label> 
