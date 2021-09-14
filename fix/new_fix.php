@@ -63,7 +63,7 @@
 	 
 	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-5 "  >
 		   <label>填單日期:</label> 
-		   <input class="form-control" name="date" id="date" value="<?=date("Y/m/d");?>"  >
+		   <input class="form-control" name="date" id="date" value="<?=date("Y/m/d");?>"  required>
 				 
 	 </div>	
 	 <div class="col-12 col-xs-12 col-sm-3 col-md-3 col-lg-3 mt-5 "  >
@@ -104,27 +104,13 @@
 		   <label>廠商：</label> 
 		   <input list="company" name="company" class="form-control"></label>
 		   <datalist  name="company" id="company">
-		   <option value="友利">
-			<option value="台欣">
-			<option value="世興">
-			<option value="洽和">
-			<option value="聯瑀">
-			<option value="浚峰">
-			<option value="曾煥明">
-			<option value="勝功電機">
-			<option value="良順">
-			<option value="宏欣">
-			<option value="弘珈">
-			<option value="金運鴻">
-			<option value="展林">
-			<option value="榮隆輪胎">
-			<option value="昆銘">
-			<option value="東倫吊車">
-			<option value="(循興)高敏汽車電機">
-			<option value="祥亨企業行">
-			<option value="宗葆板車託運">
-			<option value="大煜橡膠">
-			<option value="駿榮企業社">
+		 <?php
+		 $sql="select* from fix_company;";
+		 $result=mysqli_query($db,$sql);
+		 while($row=mysqli_fetch_array($result)){
+			echo '<option value='.$row['company'].'>';
+		 }
+		 ?>
 			</datalist>
 	 </div>   
 	 
@@ -140,29 +126,13 @@
 		 <label>設備：</label> 
 		   <input list="equipment" name="equipment" class="form-control"></label>
 		   <datalist  name="equipment" id="equipment">
-				<option value="破碎機1">
-				<option value="粉碎機2">
-				<option value="污泥貯存區">
-				<option value="砂石皮帶區域">
-				<option value="CLSM入料口2">
-				<option value="截流溝集水井">
-				<option value="移動式抽水馬達">
-				<option value="怪手200-1號">
-				<option value="怪手200-2號">
-				<option value="怪手200-3號">
-				<option value="怪手200-5號">
-				<option value="怪手200-6號(唐榮)">
-				<option value="怪手200-7號">
-				<option value="怪手320-8號(燁聯)">
-				<option value="小山貓S130">
-				<option value="鏟裝機90-3型">
-				<option value="鏟裝機90-5型">
-				<option value="鏟裝機90-6型">
-				<option value="場內備用">
-				<option value="AHU-3829 3噸半">
-				<option value="空壓機">
-				<option value="廠區其他區域">
-				<option value="庫存備用品">
+				 <?php
+				 	$sql="select* from fix_equipment;";
+					$result=mysqli_query($db,$sql);
+					while($row=mysqli_fetch_array($result)){
+						echo '<option value='.$row['equipment'].'>';
+					}
+				 ?>
 
 			</datalist>
 	</div>
@@ -170,31 +140,14 @@
 		   <label>維修項目：</label> 
 		   <input list="item" name="item" class="form-control"></label>
 		   <datalist  name="item" id="item">
-		   <option value="1HP抽水馬達-1">
-			<option value="1HP抽水馬達-2">
-			<option value="1HP抽水馬達-3">
-			<option value="3HP抽水馬達-1">
-			<option value="3HP抽水馬達-2">
-			<option value="3HP抽水馬達-3">
-			<option value="砂石皮帶">
-			<option value="破碎機輸送帶-平行">
-			<option value="破碎機輸送帶-斜行">
-			<option value="破碎機齒刀片">
-			<option value="破(粉)碎機零件">
-			<option value="馬達">
-			<option value="線路檢修">
-			<option value="保養 換機油等">
-			<option value="引擎類">
-			<option value="壓縮機(冷氣)">
-			<option value="重機具輪胎">
-			<option value="輪胎耗材">
-			<option value="拆裝工資">
-			<option value="其他零件維修類">
-			<option value="牛油、機油系列">
-			<option value="震動篩網2">
-			<option value="輪胎">
-			<option value="吊車及機具託運費用">
-			<option value="增購機具">
+		   <?php
+				 	$sql="select* from fix_item;";
+					$result=mysqli_query($db,$sql);
+					while($row=mysqli_fetch_array($result)){
+						echo '<option value='.$row['item'].'>';
+					}
+				 ?>
+
 			</datalist>
 	 </div>   
 	 
