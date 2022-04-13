@@ -34,7 +34,11 @@ include_once ("navbar.php");?>
                     $company= $row["company"]; 
                     
                     $work_case=$row['work_case'];
-                   
+                    $strength=$row['strength'];
+                    $user=$row['user'];
+                    $sale=$row['sale'];
+                    $tel=$row['tel'];
+                    $str=explode(",",$strength);
                       ?>
                     <form  id="myform" name="myform" action="show_jump.php?id=<?=$row["id"];?>" method="post" enctype="multipart/form-data">
                     
@@ -105,8 +109,118 @@ include_once ("navbar.php");?>
                                    
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
                 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+    <!--line 2-->
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
+	 
+	 <div class="col-12 col-xs-12 col-sm-3 col-md-3 col-lg-3 mt-2 mb-2">
+	 <label>電話:</label>
+	   <input type="text" class="form-control" name="tel" id="tel" value="<?=$tel;?>">
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-3 col-md-3 col-lg-3 mt-2 mb-2">
+	 <label>聯絡人:</label>
+	   <input type="text" class="form-control" name="user" id="user" value="<?=$user;?>">
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>業務:</label>
+	 <select class="form-control" name="sale" id="sale" >
+	 				<option value='<?=$sale;?>'><?=$sale;?></option>
+					<option value='王南欽'>王南欽</option>
+					<option value='王振宇'>王振宇</option>
+					<option value='林商發'>林商發</option>
+					<option value='林泰宏'>林泰宏</option>
+					<option value='林宗達'>林宗達</option>
+				</select>	
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div>
+            <!--line 3-->
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
+	 
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度1:</label>
+	  <input list="strength" name="strength[]" class="form-control" value="<?=$str[0];?>"></label>
+		   <datalist  name="strength" id="strength">
+	    
+					<option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度2:</label>
+	  <input list="strength" name="strength[]" class="form-control" value="<?=$str[1];?>"></label>
+		   <datalist  name="strength" id="strength">
+	    
+					<option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度3:</label>
+	  <input list="strength" name="strength[]" class="form-control" value="<?=$str[2];?>"></label>
+		   <datalist  name="strength" id="strength">
+	    
+					<option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度4:</label>
+	  <input list="strength" name="strength[]" class="form-control" value="<?=$str[3];?>"></label>
+		   <datalist  name="strength" id="strength">
+	    
+					<option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
 
-         
                        <!--here-->
                        <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"   > </div>
 	<div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;border-radius:10px; " > </div>
@@ -132,10 +246,21 @@ include_once ("navbar.php");?>
         $cid = $_GET['id'];
         $book_num=$_POST['book_num'];
         $company=$_POST['company'];
+		$strength=$_POST['strength'];
         $date=$_POST['date'];
         $work_case=$_POST['work_case'];
-        
+        $user=$_POST['user'];
+        $sale=$_POST['sale'];
+        $tel=$_POST['tel'];
         $name = $_SESSION['acc'];
+        $str="";
+        for($i=0;$i<count($strength);$i++){
+         //echo $i." : ".$strength[$i]."  ";
+         if($strength[$i]!=""){
+            $str.=$strength[$i].",";
+         }
+         
+        }
         if (strpos($company, '-')== false) {
 		 
       }
@@ -145,8 +270,9 @@ include_once ("navbar.php");?>
       }
          $sql = "update `erp_form` set status='R' where id='$cid ' ";
          mysqli_query($db, $sql);
-        $sqlRN = "INSERT INTO `erp_form`(`book_num`,`date`, `company`, `work_case`,`status`) VALUES 
-       ('$book_num','$date','$company', '$work_case','RN')";
+   
+       $sqlRN = "INSERT INTO `erp_form`(`book_num`,`date`, `company`, `work_case`, `tel`, `user`, `sale`,`strength`,`status`) VALUES 
+       ('$book_num','$date','$company', '$work_case','$tel','$user' ,'$sale','$str','RN')";
        mysqli_query($db, $sqlRN);                  
       echo '<script language="javascript">';
 				 

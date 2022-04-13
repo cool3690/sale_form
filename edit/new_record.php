@@ -23,7 +23,15 @@
 		 $book_num=$_POST['book_num'];
 		 $company = $_POST['company'];
 		 $work_case=$_POST['work_case'];
-		
+		 $strength=$_POST['strength'];
+		 $user=$_POST['user'];
+		 $sale=$_POST['sale'];
+		 $tel=$_POST['tel'];
+		 $str="";
+		 for($i=0;$i<count($strength);$i++){
+			//echo $i." : ".$strength[$i]."  ";
+			 $str.=$strength[$i].",";
+		 }
 		 if (strpos($company, '-')== false) {
 		 
 		}
@@ -47,8 +55,8 @@
 		</div>';
 		 } 
 		 else{
-				$sql = "INSERT INTO `erp_form`(`book_num`,`date`, `company`, `work_case`,`status`) VALUES 
-				('$book_num','$date','$company', '$work_case','N')";
+				$sql = "INSERT INTO `erp_form`(`book_num`,`date`, `company`, `work_case`, `tel`, `user`, `sale`,`strength`,`status`) VALUES 
+				('$book_num','$date','$company', '$work_case','$tel','$user' ,'$sale','$str','N')";
 				
 			if (mysqli_query($db, $sql)) {
 				echo '<div class="alert alert-info alert-dismissible">
@@ -116,7 +124,117 @@ require 'db_login.php';	// where delivery='$date' and status in('N','RN')
 	 </div>
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	 <!--line 2-->
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
+	 
+	 <div class="col-12 col-xs-12 col-sm-3 col-md-3 col-lg-3 mt-2 mb-2">
+	 <label>電話:</label>
+	   <input type="text" class="form-control" name="tel" id="tel" value="">
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-3 col-md-3 col-lg-3 mt-2 mb-2">
+	 <label>聯絡人:</label>
+	   <input type="text" class="form-control" name="user" id="user" value="">
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>業務:</label>
+	 <select class="form-control" name="sale" id="sale" >
+	 				<option value=''>請選擇</option>
+					<option value='王南欽'>王南欽</option>
+					<option value='王振宇'>王振宇</option>
+					<option value='林商發'>林商發</option>
+					<option value='林泰宏'>林泰宏</option>
+					<option value='林宗達'>林宗達</option>
+				</select>	
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	     <!--line 3-->
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
+	 
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度1:</label>
+	  <input list="strength" name="strength[]" class="form-control"></label>
+		   <datalist  name="strength" id="strength">
 	    
+					<option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度2:</label>
+	  <input list="strength" name="strength[]" class="form-control"></label>
+		   <datalist  name="strength" id="strength">
+	    
+					<option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度3:</label>
+	  <input list="strength" name="strength[]" class="form-control"></label>
+		   <datalist  name="strength" id="strength">
+	    
+					<option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度4:</label>
+	  <input list="strength" name="strength[]" class="form-control"></label>
+		   <datalist  name="strength" id="strength">
+	    
+					<option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
 	 <!--here-->
  
 

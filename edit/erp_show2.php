@@ -54,14 +54,14 @@
 	 }
 	   
 
-?> <form method="post" action="erp_show.php" name="form1" class="">
+?> <form method="post" action="erp_show2.php" name="form1" class="">
 		<div class="row mt-3 mb-3">	
-			 
-			<div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div class="col-lg-2"></div>
+			<div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-10">
 				
 					<div class="row justify-content-end"align="right " style="margin-top:32px;margin-bottom:16px;">
-				  <input type="date" class="form-control find"style=" height:44px; width:180px; margin-left:10px;" name="date2"  id="date2"   > 
-			 <input list="company" class="form-control find"style=" height:44px; width:250px; margin-left:10px;" name="date"  id="date"   > 
+				  <input type="date" class="form-control find"style=" height:44px; width:180px; margin-left:10px;" name="date2"  id="date2"    >
+			  <input list="company" class="form-control find"style=" height:44px; width:250px; margin-left:10px;" name="date"  id="date"   required> 
 			   <datalist  name="company" id="company">
     	   <?php
 					$sql_search2 = "select company,c_id from `customer`";
@@ -87,36 +87,34 @@
 	</form>
 		<?php
 			require 'db_login.php';
-			if(@$_POST['date']!=null && @$_POST['date2']!=null){
-				$ndate = $_POST['date'];
-				 $ndate2 = $_POST['date2']; //&&@$_POST['date2']!=null
-				//$ndate2=$_POST['date'];
-				//$_SESSION['date']=$ndate;
-				$pieces = explode("-", $ndate);
+			if(@$_POST['date']!=null &&@$_POST['date2']!=null ) {
+				$company = $_POST['date'];
+				$ndate = $_POST['date2'];
+				$pieces = explode("-", $company);
 				
-				$ndate=$pieces[1];
-				echo $ndate;
-				$sql = "SELECT * FROM erp_form where status in('N','RN')and company like '$ndate%' and date between '$ndate2' and '$ndate2'  order by  CONVERT(`company` using big5),book_num ASC";
-			}
-			else if(@$_POST['date']!=null){
-				$ndate = $_POST['date'];
+				$company=$pieces[1];
+				$sql = "SELECT * FROM erp_form where status in('N','RN')and company like '$company%' and  date between '$ndate' and '$ndate' order by  CONVERT(`company` using big5),book_num ASC";
+			}		
+			else if(@$_POST['date']!=null ){
+				$company = $_POST['date'];
 				//$ndate2 = $_POST['date2']; &&@$_POST['date2']!=null
 				//$ndate2=$_POST['date'];
 				//$_SESSION['date']=$ndate;
-				$pieces = explode("-", $ndate);
+				$pieces = explode("-", $company);
 				
-				$ndate=$pieces[1];
-				echo $ndate;
-				$sql = "SELECT * FROM erp_form where status in('N','RN')and company like '$ndate%'  order by  CONVERT(`company` using big5),book_num ASC";
+				$company=$pieces[1];
+				echo $company;
+				$sql = "SELECT * FROM erp_form where status in('N','RN')and company like '$company%'  order by  CONVERT(`company` using big5),book_num ASC";
 				 
 			 
-			}else if(@$_POST['date2']!=null){
-				 
-				 $ndate2 = $_POST['date2'];
-				$sql = "SELECT * FROM erp_form where status in('N','RN')and date between '$ndate2' and '$ndate2' order by  CONVERT(`company` using big5),book_num ASC";
-				 
+			}
+			if(@$_POST['date2']!=null ){
 			 
-			}/*
+				$ndate = $_POST['date2'];
+			  
+				$sql = "SELECT * FROM erp_form where status in('N','RN')and date between '$ndate' and '$ndate' order by  CONVERT(`company` using big5),book_num ASC";
+			}
+			/*
 			else if($_SESSION['date']!=""){
 				$ndate=$_SESSION['date'];
 				$ndate2=$_SESSION['date'];
@@ -156,8 +154,6 @@
 					  
 					 <th class='text-center align-middle' >客戶</th>
 					<th class='text-center align-middle' > 工程名稱</th>
-					<th class='text-center align-middle' > 聯絡人<br>電話<br>業務<br></th>
-					<th class='text-center align-middle' > 強度</th>
                     <th class='text-center align-middle'style="border-radius:0% 5% 0% 0%;line-height:30px;width:120px;border: none !important;" > 修改<br>刪除</th>
 					
 					</tr> </thead>
@@ -181,14 +177,7 @@
 					 <td class="text-center align-middle" style="line-height:30px; ">  
                      <?=$row["work_case"];?>  
 					</td>
-					<td class="text-center align-middle" style="line-height:30px; ">  
-                     <?=$row["user"];?>  <br/>
-					 <?=$row["tel"];?>  <br/>
-					 <?=$row["sale"];?> 
-					</td>
-					   <td class="text-center align-middle" style="line-height:30px; ">  
-                     <?=$row["strength"];?>  
-					</td>
+					  
 						 
 						<td class="align-left  align-middle" style="line-height:30px;">  
 						<button type="submit" class="btn_choice "  name="pen[]"id='pen'  style="border-width:0px;outline : none;" value="<?=$row["id"]?>">
