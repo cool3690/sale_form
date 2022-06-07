@@ -31,7 +31,7 @@ include_once ("navbar.php");?>
  
 department=new Array();
 department[0]=["大於20", "大於50", "小於90", "20-90", "20-70","30-80","35-90","40-80","50-90","30-60","20-50","140", "175", "210", "245", "280", "315", "350", "420" ];//clsm	 
-department[1]=["大於20", "大於50", "小於90", "20-90", "20-70","30-80","35-90","40-80","50-90","30-60","20-50"];	//一般料
+department[1]=["大於20", "大於50", "小於90", "20-90", "20-70","30-80","35-90","40-80","40-90","50-90","30-60","20-50"];	//一般料
 department[2]=["140", "175", "210", "245", "280", "315", "350", "420"];	//一般料
 function renew(index){
 	for(var i=0;i<department[index].length;i++)
@@ -260,6 +260,7 @@ function renew(index){
 					<option value='30-80'>30-80</option>
 					<option value='35-90'>35-90</option>
 					<option value='40-80'>40-80</option>
+                              <option value='40-90'>40-90</option>
 					<option value='50-90'>50-90</option>
 					<option value='30-60'>30-60</option>
 					<option value='20-50'>20-50</option>

@@ -411,6 +411,7 @@
 					<option value='30-80'>30-80</option>
 					<option value='35-90'>35-90</option>
 					<option value='40-80'>40-80</option>
+					<option value='40-90'>40-90</option>
 					<option value='50-90'>50-90</option>
 					<option value='30-60'>30-60</option>
 					<option value='20-50'>20-50</option>

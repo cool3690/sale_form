@@ -171,6 +171,14 @@ require 'db_login.php';	// where delivery='$date' and status in('N','RN')
 					<option value='50-90'>50-90</option>
 					<option value='30-60'>30-60</option>
 					<option value='20-50'>20-50</option>
+					<option value='140'>140</option>
+					<option value='175'>175</option>
+					<option value='210'>210</option>
+					<option value='245'>245</option>
+					<option value='280'>280</option>
+					<option value='315'>315</option>
+					<option value='350'>350</option>
+					<option value='420'>420</option>
 		</datalist>
 	 </div>
 	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
@@ -191,14 +199,21 @@ require 'db_login.php';	// where delivery='$date' and status in('N','RN')
 					<option value='50-90'>50-90</option>
 					<option value='30-60'>30-60</option>
 					<option value='20-50'>20-50</option>
+					<option value='140'>140</option>
+					<option value='175'>175</option>
+					<option value='210'>210</option>
+					<option value='245'>245</option>
+					<option value='280'>280</option>
+					<option value='315'>315</option>
+					<option value='350'>350</option>
+					<option value='420'>420</option>
 		</datalist>
 	 </div>
 	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
 	 <label>強度3:</label>
 	  <input list="strength" name="strength[]" class="form-control"></label>
 		   <datalist  name="strength" id="strength">
-	    
-					<option value='大於20'>大於20</option>
+	    <option value='大於20'>大於20</option>
 					<option value='大於40'>大於40</option>
 					<option value='大於50'>大於50</option>
 					<option value='小於80'>小於80</option>
@@ -211,14 +226,21 @@ require 'db_login.php';	// where delivery='$date' and status in('N','RN')
 					<option value='50-90'>50-90</option>
 					<option value='30-60'>30-60</option>
 					<option value='20-50'>20-50</option>
+					<option value='140'>140</option>
+					<option value='175'>175</option>
+					<option value='210'>210</option>
+					<option value='245'>245</option>
+					<option value='280'>280</option>
+					<option value='315'>315</option>
+					<option value='350'>350</option>
+					<option value='420'>420</option>
 		</datalist>
 	 </div>
 	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
 	 <label>強度4:</label>
 	  <input list="strength" name="strength[]" class="form-control"></label>
 		   <datalist  name="strength" id="strength">
-	    
-					<option value='大於20'>大於20</option>
+	    <option value='大於20'>大於20</option>
 					<option value='大於40'>大於40</option>
 					<option value='大於50'>大於50</option>
 					<option value='小於80'>小於80</option>
@@ -231,10 +253,132 @@ require 'db_login.php';	// where delivery='$date' and status in('N','RN')
 					<option value='50-90'>50-90</option>
 					<option value='30-60'>30-60</option>
 					<option value='20-50'>20-50</option>
+					<option value='140'>140</option>
+					<option value='175'>175</option>
+					<option value='210'>210</option>
+					<option value='245'>245</option>
+					<option value='280'>280</option>
+					<option value='315'>315</option>
+					<option value='350'>350</option>
+					<option value='420'>420</option>
 		</datalist>
 	 </div>
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div>
+ <!--line 3-->
 	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div> 
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div> 
+	 
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度5:</label>
+	  <input list="strength" name="strength[]" class="form-control"></label>
+		   <datalist  name="strength" id="strength">
+	    <option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+					<option value='140'>140</option>
+					<option value='175'>175</option>
+					<option value='210'>210</option>
+					<option value='245'>245</option>
+					<option value='280'>280</option>
+					<option value='315'>315</option>
+					<option value='350'>350</option>
+					<option value='420'>420</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度6:</label>
+	  <input list="strength" name="strength[]" class="form-control"></label>
+		   <datalist  name="strength" id="strength">
+	    <option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+					<option value='140'>140</option>
+					<option value='175'>175</option>
+					<option value='210'>210</option>
+					<option value='245'>245</option>
+					<option value='280'>280</option>
+					<option value='315'>315</option>
+					<option value='350'>350</option>
+					<option value='420'>420</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度7:</label>
+	  <input list="strength" name="strength[]" class="form-control"></label>
+		   <datalist  name="strength" id="strength">
+	    <option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+					<option value='140'>140</option>
+					<option value='175'>175</option>
+					<option value='210'>210</option>
+					<option value='245'>245</option>
+					<option value='280'>280</option>
+					<option value='315'>315</option>
+					<option value='350'>350</option>
+					<option value='420'>420</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-2 col-md-2 col-lg-2 mt-2 mb-2">
+	 <label>強度8:</label>
+	  <input list="strength" name="strength[]" class="form-control"></label>
+		   <datalist  name="strength" id="strength">
+	    <option value='大於20'>大於20</option>
+					<option value='大於40'>大於40</option>
+					<option value='大於50'>大於50</option>
+					<option value='小於80'>小於80</option>
+					<option value='小於90'>小於90</option>
+					<option value='20-90'>20-90</option>
+					<option value='20-70'>20-70</option>
+					<option value='30-80'>30-80</option>
+					<option value='35-90'>35-90</option>
+					<option value='40-80'>40-80</option>
+					<option value='50-90'>50-90</option>
+					<option value='30-60'>30-60</option>
+					<option value='20-50'>20-50</option>
+					<option value='140'>140</option>
+					<option value='175'>175</option>
+					<option value='210'>210</option>
+					<option value='245'>245</option>
+					<option value='280'>280</option>
+					<option value='315'>315</option>
+					<option value='350'>350</option>
+					<option value='420'>420</option>
+		</datalist>
+	 </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  style="background-color:#fff;" > </div>
+	 <div class="col-12 col-xs-12 col-sm-1 col-md-1 col-lg-1"  > </div>	 
 	 <!--here-->
  
 
